@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>MTL Strategy Guide</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <nav class='site-nav'>
+        <a href='index.html' class='home-btn'>ðŸ  Home / TOC</a>
+        <select onchange='if(this.value) window.location.href=this.value'>
+            <option value=''>-- Jump to Chapter --</option>
+            <option value='00Abstract.html'>1. Abstract</option>
+            <option value='01Introduction.html'>2. Introduction</option>
+            <option value='02UsefulLinks.html'>3. Useful Links</option>
+            <option value='03GeneralThings.html'>4. General Things</option>
+            <option value='04MoveOrderandPickingPhase.html'>5. Move Order & Picking</option>
+            <option value='05GeneralGameplay.html'>6. General Gameplay</option>
+            <option value='06Rounding.html'>7. Rounding</option>
+            <option value='07CardSettings.html'>8. Card Settings</option>
+            <option value='08SpecificTricks.html'>9. Specific Tricks</option>
+        </select>
+    </nav>
+    <main>
+<h2>Specific Tricks</h2>
+
+<h3>Percentage Moves</h3>
+
+<p>This concerns specifically the idea discussed in this <a href="https://www.warzone.com/Forum/224889-attack-percentage-conditional-moves" target="_blank">Forum post</a> on how you can do conditional delays using percentage moves (key reminder: it rounds down, not up).</p>
+
+<p>Suppose this <a href="https://www.warzone.com/MultiPlayer?GameID=41513918" target="_blank">Elitist Africa game</a> and the very last turn. On the two red territories in the center I deploy up to 5 for beneficial kill rates, setup 2x 13% percentage moves back and forth on the same cycle for extra delays in case my opponent delays me, and then attack. If my opponent attacks me before the percentage moves take place, as it happened, they appear as 0-moves and nothing happens. You can see similar examples in <a href="https://www.warzone.com/MultiPlayer?GameID=34661130" target="_blank">Turn 7 in Asia</a>, <a href="https://www.warzone.com/MultiPlayer?GameID=35183711" target="_blank">Turn 5, 6</a> and <a href="https://www.warzone.com/MultiPlayer?GameID=37050920" target="_blank">Turn 6</a>.</p>
+
+<p>A case-specific example of this can be seen in this <a href="https://www.warzone.com/MultiPlayer?GameID=23344117" target="_blank">Yorkshire Brawl</a> game. You are Rufus 6 vs 6 income and you have priority on Turn 2. How can you defend your +1 bonus on the north while also attempting to conquer the +2 bonus on the south? Pardon can attack with up to 6 armies. That means, as Rufus, with 5 defenders you are good. His sequence of:</p>
+<ol>
+    <li>75% tap</li>
+    <li>1 army transfer</li>
+    <li>Then last move capture +2 bonus south</li>
+</ol>
+<p>ensures that:</p>
+<ol>
+    <li>If Pardon doesn't attack, 76% of 4 is 3, Rufus attacks with 3 armies and then transfers 1 (extra delay).</li>
+    <li>If Pardon taps Rufus, 76% of 3 is 2, Rufus attacks with 2 and then transfers 1 (extra delay).</li>
+    <li>If Pardon attacks Rufus with 3, Pardon kills 2, Rufus is left with 3 (2 movable). 76% of 2 is still 2, as such Rufus still attacks with 2, no extra delay.</li>
+    <li>If Pardon attacks with 5, 76% of 1 is 1, as such Rufus taps, no delay.</li>
+</ol>
+<p>Covering 4 different scenarios with 1 move.</p>
+
+<p>Another case-specific scenario can be seen in this <a href="https://www.warzone.com/MultiPlayer?GameID=38696112" target="_blank">Biomes 2vs2</a> game on Turn 6. The idea is that if you are on Team A you want to maximize the delays, but move order is Jake -&gt; Koala -&gt; dco. So as koala, if you tap on the right first, then transfer-only to the Oil +4, you risk getting combo attacked before that. But also if you transfer first, you always want to leave one behind to tap to the right. The 92% move solves it in the way that, if the enemy on the right taps you first, you still transfer all but 1 and use 1 to delay.</p>
+
+<p>A final case for how to use percentage moves comes with this <a href="https://www.warzone.com/MultiPlayer?GameID=14309659" target="_blank">Malvia game</a>, where on Turn 3 from Bbraw's perspective it's better to split attack with 50-50% instead of what actually happened. This is a rather interesting idea since percentage moves give you the opportunity to split attack equally or control that number regardless of whether or not your opponent will attack you back. For example in this <a href="https://www.warzone.com/MultiPlayer?GameID=41472964" target="_blank">game</a>, on Turn 4 NE vs nick, I expect deploys back so I attack the territories at 50 and 50% to make sure I split evenly.</p>
+
+<h3>Intel Move</h3>
+
+<p>This regards the forum <a href="https://www.warzone.com/Forum/652358-warzone-secret-want-know" target="_blank">post</a>. The idea is straightforward. The game doesn't know whether or not a move will fail before queueing it. As a result you can queue a 0-move at the end of your moves in order to potentially gain information on:</p>
+<ul>
+    <li>The move order</li>
+    <li>The amount of delays your opponent did</li>
+</ul>
+
+<p>The most useful experience I had with it was in this <a href="https://www.warzone.com/MultiPlayer?GameID=36761733" target="_blank">Clan League 3vs3 game</a> where RynoFury attacked on his 6th move north in Partha, telling me that they have a teammate somewhere in the region that made it so he got a bonus with a tap.</p>
+
+<h3>Attack-only</h3>
+
+<p>The attack-only setting is a setting that's mainly used defensively, with a good forum on it at this <a href="https://www.warzone.com/Forum/4440-usefulness-attacktransfer-orders?Offset=19" target="_blank">post</a>. The general idea of course, is that I want to send some troops from territory A to territory B only in case my opponent has already attacked me. This is usually a positional move, though sometimes can be used to recapture a territory.</p>
+
+<p>For example on recapturing a territory, <a href="https://www.warzone.com/MultiPlayer?GameID=41541364" target="_blank">Turn 4</a> in Partha: the goal is to outdelay the opponent then Attack-only the other territory of a double border—an extremely simple and effective idea. On the same game on Turn 7 you can also find last moves of attack-only taps to reduce an opponent's stack. Another example in this <a href="https://www.warzone.com/MultiPlayer?GameID=40011579" target="_blank">French Brawl game</a> on Turn 4. Another example in this Greece LD <a href="https://www.warzone.com/MultiPlayer?GameID=39911346" target="_blank">game</a> on Turn 14 on my very last move, as I don't want to reposition my stack due to how strong the choke-point I control is, so an attack-only is due just in case I get captured. You'll find that attack-only shines in LD templates, due to the flexibility of not rotating your armies to a weaker territory if the move fails. Another example in this <a href="https://www.warzone.com/MultiPlayer?GameID=36677819" target="_blank">Greece LD game</a> where Rufus on Turn 5 does an extra delay into an attack-only move of 3 armies NE with the purpose of having two territories by the end of the turn, giving him options so as to not get eliminated.</p>
+
+<p>Attack-only has a final very niche purpose in WR games when you want to attack a neutral to complete a bonus, like in <a href="https://www.warzone.com/multiplayer?GameID=7926274" target="_blank">this game</a> as explained in the <a href="https://www.warzone.com/Forum/149405-trans-attc-percentage-cards?Offset=0" target="_blank">Forum</a>.</p>
+
+<h3>Transfer-only</h3>
+
+<p>The transfer-only setting is generally used so as to not burn armies in case your opponent captures a territory. For example in this <a href="https://www.warzone.com/MultiPlayer?GameID=40619054" target="_blank">game</a> on Turn 8 I send in my first move with transfer-only those 2 troops as I want to make sure they don't go attacking. Or similarly in <a href="https://www.warzone.com/MultiPlayer?GameID=39911346" target="_blank">this one</a>, Aika on turn 16 sends his armies forward north with transfer-only in case I haven't attacked and captured. Same for <a href="https://www.warzone.com/MultiPlayer?GameID=41380732" target="_blank">here</a>, where PS on Turn 19 uses transfer-only on his first move.</p>
+
+<p>The more unique/niche idea behind transfer-only is that if it fails, it locks your armies in place, which creates new opportunities. For example in this <a href="https://www.warzone.com/MultiPlayer?GameID=40836522" target="_blank">Turkey LD game</a>, Rufus expects me to first move him, so he performs a 2-army transfer-only move to a neutral that will always fail, effectively locking 2 movable armies in place. This is for the scenario where I first move him with 6, leaving him with 2 movable armies. If I don't attack him on my first move, his armies from the north have joined in and his last-move completion of the bonus will succeed. If I attack him, nothing happens and he retains his army advantage. Similarly, in <a href="https://www.warzone.com/MultiPlayer?GameID=34661130" target="_blank">this game</a> on Turn 6, adrenaline wants to retain his stack in place at Zama, in Africa, so he does a 12-army transfer-only move to a neutral followed by a 3-army attack.</p>
+
+<p>The fact that failed transfer-only moves result in locked armies can be further used to optimize the usage of the Blockade card, as shown in the Blockade section.</p>
+
+
+    </main>
+</body>
+</html>

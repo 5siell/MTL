@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>MTL Strategy Guide</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <nav class='site-nav'>
+        <a href='index.html' class='home-btn'>ðŸ  Home / TOC</a>
+        <select onchange='if(this.value) window.location.href=this.value'>
+            <option value=''>-- Jump to Chapter --</option>
+            <option value='00Abstract.html'>1. Abstract</option>
+            <option value='01Introduction.html'>2. Introduction</option>
+            <option value='02UsefulLinks.html'>3. Useful Links</option>
+            <option value='03GeneralThings.html'>4. General Things</option>
+            <option value='04MoveOrderandPickingPhase.html'>5. Move Order & Picking</option>
+            <option value='05GeneralGameplay.html'>6. General Gameplay</option>
+            <option value='06Rounding.html'>7. Rounding</option>
+            <option value='07CardSettings.html'>8. Card Settings</option>
+            <option value='08SpecificTricks.html'>9. Specific Tricks</option>
+        </select>
+    </nav>
+    <main>
+<h2>Card Settings</h2>
+
+<p>For a start, here's the <a href="https://www.warzone.com/wiki/Card_minimums" target="_blank">Wiki</a> link for how the settings work when making a template, and here's every setting in template-creation explained below.</p>
+
+<h3>Universal Card Dials</h3>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #e6f2ff;">
+            <th>Setting (lobby label)</th>
+            <th>What it controls</th>
+            <th>Typical range / default</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>(p) Pieces to divide the card into</td>
+            <td>How many card pieces you must collect before a <strong>whole</strong> card appears in your stack.</td>
+            <td>2–20 (8)</td>
+        </tr>
+        <tr>
+            <td>(min) Pieces awarded per turn</td>
+            <td>Pieces gained for simply capturing ≥ 1 territory that turn.</td>
+            <td>0–5 (1)</td>
+        </tr>
+        <tr>
+            <td>(start) Pieces at game start</td>
+            <td>Free head-start pieces each player begins with.</td>
+            <td>0–full card</td>
+        </tr>
+        <tr>
+            <td>(w) Weight</td>
+            <td>When several card types exist, higher weight = drawn more often.</td>
+            <td>0–5 (1)</td>
+        </tr>
+        <tr>
+            <td>Maximum cards you can hold</td>
+            <td>Hard cap; excess cards require a choice to discard.</td>
+            <td>1–999</td>
+        </tr>
+        <tr>
+            <td>Visibility of opponent cards</td>
+            <td>Hidden / Visible — shows how many cards foes possess.</td>
+            <td>Hidden</td>
+        </tr>
+        <tr>
+            <td>Visibility of opponent’s played card</td>
+            <td>Hidden / Visible — shows the card order itself when it is executed.</td>
+            <td>Hidden</td>
+        </tr>
+    </tbody>
+    <caption><strong>Table:</strong> Universal card settings — affect <em>all</em> card types on the template.</caption>
+</table>
+
+<h3>Per-Card Extra Knobs</h3>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #e6f2ff;">
+            <th>Card type</th>
+            <th>Extra knobs in the UI</th>
+            <th>Rounding / special notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Reinforcement</td>
+            <td>Mode: <em>Fixed</em> (+X armies) <em>or</em> <em>Progressive</em> (multiplier × turn)</td>
+            <td>Armies round to nearest; .5 rounds <strong>down</strong>.</td>
+        </tr>
+        <tr>
+            <td>Order Priority / Delay</td>
+            <td>none (just play the card)</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>Airlift</td>
+            <td>none</td>
+            <td>May target teammate if option is enabled.</td>
+        </tr>
+        <tr>
+            <td>Blockade</td>
+            <td>Multiplier (% of armies kept)</td>
+            <td>Resulting stack rounds <strong>down</strong>.</td>
+        </tr>
+        <tr>
+            <td>Emergency Blockade</td>
+            <td>Multiplier (smaller than regular blockade)</td>
+            <td>Same round-up rule.</td>
+        </tr>
+        <tr>
+            <td>Bomb</td>
+            <td>% reduction (default 50%)</td>
+            <td>Surviving stack rounds <strong>down</strong>.</td>
+        </tr>
+        <tr>
+            <td>Gift</td>
+            <td>none</td>
+            <td>Transfers ownership the moment the order fires.</td>
+        </tr>
+        <tr>
+            <td>Diplomacy</td>
+            <td>Duration (# turns)</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>Spy / Recon / Surveillance</td>
+            <td>Duration (turns); Recon: radius</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>Sanctions</td>
+            <td>Type: “Set to 0” <em>or</em> % income; Duration (turns)</td>
+            <td>Check Rounding Section</td>
+        </tr>
+    </tbody>
+    <caption><strong>Table:</strong> Extra settings and rounding quirks that apply to each individual card.</caption>
+</table>
+
+<p>You can see all the settings across specific templates in the table below (shorthand notation: <code>p,w,min,start,trailer</code>; “–” = card disabled):</p>
+
+<h3>Card Settings for All Templates</h3>
+
+<table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse; width: 100%; font-size: 0.85em;">
+    <thead>
+        <tr style="background-color: #e6f2ff;">
+            <th>Template</th>
+            <th>RF</th>
+            <th>E-block</th>
+            <th>OP</th>
+            <th>OD</th>
+            <th>Gift</th>
+            <th>Diplo</th>
+            <th>Sanction</th>
+            <th>Recon</th>
+            <th>Blockade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Aseridith Islands</td><td>1,0,0,2,+3</td><td>–</td><td>1,0,0,2</td><td>–</td><td>–</td><td>–</td><td>3,1,1,1,6,20%</td><td>–</td><td>10,1,1,19,200%</td></tr>
+        <tr><td>Australia</td><td>3,1,1,0,+4</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Basileia</td><td>4,1,1,0,+5</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Battle for Middle Earth</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>20,1,1,20,351%</td></tr>
+        <tr><td>Battle Islands V</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>3,1,1,0,1</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Belarus</td><td>4,1,1,0,+4</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>21,1,1,21,351%</td></tr>
+        <tr><td>Biomes of America</td><td>1,1,0,1,+5</td><td>–</td><td>–</td><td>–</td><td>1,1,0,1</td><td>–</td><td>4,1,1,0,4,25%</td><td>–</td><td>1,1,0,2,200%</td></tr>
+        <tr><td>Black Sea</td><td>–</td><td>–</td><td>7,1,1,3</td><td>5,1,1,2</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Blitzkrieg Bork</td><td>4,1,1,8,+5</td><td>–</td><td>1,0,0,1</td><td>–</td><td>5,1,1,5</td><td>–</td><td>–</td><td>–</td><td>1,1,1,10,200%</td></tr>
+        <tr><td>British Raj</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>1,1,0,1,1</td><td>–</td><td>18,1,1,18,351%</td></tr>
+        <tr><td>Discovery</td><td>4,1,1,0,+6</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1,1,0,1,400%</td></tr>
+        <tr><td>Earthsea</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Elitist Africa</td><td>–</td><td>–</td><td>5,0,0,1</td><td>–</td><td>10,0,0,1</td><td>–</td><td>–</td><td>–</td><td>10,1,1,16,314%</td></tr>
+        <tr><td>Fast Earth</td><td>–</td><td>–</td><td>1,0,0,2</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1,0,0,1,200%</td></tr>
+        <tr><td>Final Fantasy VII</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>French Brawl</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Georgia Army Cap</td><td>4,1,1,4,+5</td><td>–</td><td>–</td><td>–</td><td>1,0,0,1</td><td>–</td><td>–</td><td>–</td><td>1,1,1,30,200%</td></tr>
+        <tr><td>Great Lakes</td><td>3,1,1,0,+5</td><td>–</td><td>5,1,1,0</td><td>6,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>10,1,1,5,400%</td></tr>
+        <tr><td>Greater Middle East III</td><td>8,1,1,0,+3</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>5,1,1,0,1</td><td>19,1,1,14,400%</td></tr>
+        <tr><td>Greece LD</td><td>5,1,1,0,+3</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>14,1,1,9,400%</td></tr>
+        <tr><td>Guiroma</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1,0,0,1,314%</td></tr>
+        <tr><td>Hannibal at the Gates</td><td>3,1,1,0,+3</td><td>–</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1,0,0,1,200%</td></tr>
+        <tr><td>Island of Ruins</td><td>3,1,1,2,+3</td><td>–</td><td>6,1,1,12</td><td>5,1,1,0</td><td>–</td><td>–</td><td>1,0,0,1,1</td><td>–</td><td>8,1,1,8,200%</td></tr>
+        <tr><td>Laketown</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>18,1,1,18,400%</td></tr>
+        <tr><td>Lampuria Swap</td><td>4,1,1,0,+5</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1,0,0,1,1</td><td>–</td><td>–</td></tr>
+        <tr><td>Landria</td><td>3,1,1,0,+5</td><td>–</td><td>1,0,0,1</td><td>–</td><td>8,1,1,16</td><td>–</td><td>–</td><td>–</td><td>3,1,1,12,200%</td></tr>
+        <tr><td>MA Battle Islands V</td><td>–</td><td>–</td><td>1,0,0,1</td><td>–</td><td>3,1,1,1</td><td>–</td><td>2,1,1,2,1</td><td>–</td><td>2,1,1,1,1000%</td></tr>
+        <tr><td>Macedonia no split</td><td>3,1,1,0,+6</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>3,1,1,0,1</td><td>–</td><td>–</td></tr>
+        <tr><td>Malvia</td><td>5,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>MME MA LD</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Numenor</td><td>3,1,1,0,+2</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>10,1,1,8,1</td><td>–</td><td>8,1,1,8,254%</td></tr>
+        <tr><td>Pangea Ultima</td><td>6,1,1,5,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>12,1,1,12,400%</td></tr>
+        <tr><td>Phobia</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Post-melt Antarctica</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Randomized Strat ME</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Saudi Arabia</td><td>4,1,1,0,+5</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>16,1,1,16,400%</td></tr>
+        <tr><td>Slow Burn</td><td>4,1,1,2,+3</td><td>–</td><td>6,1,1,0</td><td>7,1,1,0</td><td>–</td><td>–</td><td>1,0,0,1,1</td><td>–</td><td>15,1,1,15,400%</td></tr>
+        <tr><td>Strat ME</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Strat MME</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Strategic Commanders</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Strategic Greece</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Succession Wars</td><td>4,1,1,4,+2</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>5,1,1,0,1</td><td>–</td><td>–</td></tr>
+        <tr><td>Tarabonia's Choice</td><td>4,1,1,4,0.4*turn</td><td>1,0,0,1,200%</td><td>1,0,0,1</td><td>1,0,0,1</td><td>–</td><td>–</td><td>1,0,0,1,5 -3%</td><td>–</td><td>1,0,0,1,400%</td></tr>
+        <tr><td>Timid Lands</td><td>1,1,1,0,+1</td><td>–</td><td>1,0,0,2</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1,0,0,1,300%</td></tr>
+        <tr><td>Tor-ture</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Treasure Map</td><td>4,1,1,0,+5</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Turkey LD</td><td>3,1,0,0,+3</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1,0,0,1,200%</td></tr>
+        <tr><td>Unicorn Island</td><td>5,1,1,0,+4</td><td>–</td><td>6,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>19,1,1,19,351%</td></tr>
+        <tr><td>Volcano Island</td><td>4,1,1,0,+4</td><td>–</td><td>6,1,1,0</td><td>5,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>16,1,1,16,351%</td></tr>
+        <tr><td>World of Warhammer</td><td>–</td><td>–</td><td>4,1,1,1</td><td>4,1,1,0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>8,1,1,8,314%</td></tr>
+        <tr><td>Yorkshire Brawl</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+    </tbody>
+    <caption><strong>Table:</strong> Card settings for all templates (shorthand <code>p,w,min,start,trailer</code>). “–” = card disabled.</caption>
+</table>
+
+
+<h3>Reinforcement</h3>
+
+<p>The existence of a reinforcement card that's collected in pieces forces you to take risks in capturing a territory and not staying still so as to grow an army advantage and get defensive kill rates. As such it's part of pretty much every template out there.</p>
+
+<h3>Spy</h3>
+
+<p>The existence of the spy card is a bit pointless in 1v1s as it basically changes the game from normal fog to fogless. Nonetheless it's pretty straightforward and has only been used in Fogless Fighting in a very niche way to have the games be fogless for the players but light fog for the outsiders as a soft anti-cheat method.</p>
+
+<h3>Emergency Blockade</h3>
+
+<p>Previously called abandon card, it is one of the most controversial parts of the game. The reason is simply, you press a magic button and your opponent runs his stack into a wall.</p>
+
+<p>There have been a lot of attempts to balance the card, notably it is used in <a href="https://www.warzone.com/MultiPlayer/Tournament?ID=60562" target="_blank">Gotham City</a> although it doesn't affect too much gameplay. It allows you to be more versatile with picks and cover a combo with a single territory -&gt; press Ebloc, and prevent your opponent from getting the bonus ever.</p>
+
+<p>It's most accepted implementation comes at <a href="https://www.warzone.com/MultiPlayer/Tournament?ID=53958" target="_blank">Fogless Fighting</a>, a non-MTL but popular template. Balancing it comes with a) both players having an abundance of them and b) Ebloc being at 200% - a relatively low multiplier in an already low income WR template (3 income, n-2 bonuses). The template revolves around safe income and Eblocing the path your opponent has to take to find you, while flanking his.</p>
+
+<p>It finds its place in the MTL in <a href="https://www.warzone.com/MultiPlayer?GameID=40249704" target="_blank">Tarabonia's Choice</a>. The issue comes with being extremely hard to play around its existence, where as you can see in the game above, the game is over on Turn 2 just like that. Generally speaking this card is so strong that its presence in a template makes the template's gameplay revolve around Ebloc and income transition/FTBs/counters etc. And you can do tricks like <a href="https://www.warzone.com/MultiPlayer?GameID=38030095" target="_blank">this on Turn 6</a>.</p>
+
+<h3>Airlift</h3>
+
+<p>There are no MTL templates featuring the Airlift Card. Overall in the strategic scene it is considered extremely powerful given it takes place before all moves. The exact sequence as linked in the Turn Phases Section, is Spy -&gt; RF -&gt; Bomb -&gt; E-bloc -&gt; Airlift -&gt; Gift -&gt; attacks/transfers etc.</p>
+
+<p>Nevertheless, airlift is a key card of some very popular QM templates around local deployment and airlifting armies from clusters of income. In AWP, it is used in two templates, firstly in <a href="https://www.warzone.com/MultiPlayer/Tournament?ID=47456" target="_blank">Sumo</a> for repositioning armies and secondly in <a href="https://www.warzone.com/MultiPlayer/Tournament?ID=60562" target="_blank">Gotham City</a>. Sumo as a template has a series of issues besides airlift itself, so I'm setting it aside. In Gotham City airlift superficially doesn't cause issues as in INSS templates you don't really get to build stacks, + airlift allows repositioning an entire spawn elsewhere. The culprit is <a href="https://www.warzone.com/MultiPlayer?GameID=40937994" target="_blank">here</a>, in the ability to airlift armies and gift to the opponent on the same turn, introducing too much variance.</p>
+
+<p>Recent attempts to use this card involve <a href="https://www.warzone.com/MultiPlayer/Tournament?ID=58382" target="_blank">GMELD</a> and <a href="https://www.warzone.com/MultiPlayer/Tournament?ID=61583" target="_blank">Platcasso</a>. The idea behind the templates is that you can only hold a certain amount of cards, making it so that you must use the airlift whenever you gather the pieces or on Turn 1.</p>
+
+<h3>Gift</h3>
+
+<p>On the surface, the gift card has been designed for collaboration in team-games, however it has a few interesting uses in 1v1s. Namely in:</p>
+<ul>
+    <li>INSS</li>
+    <li>Multi-attack</li>
+    <li>Landria</li>
+    <li>Georgia Army Cap</li>
+</ul>
+
+<p>Starting from the bottom, in Georgia AC you are given 1 Gift card (no pieces per turn) that can be used to gift inactive armies for a 1-turn swing to your opponent. For example in this <a href="https://www.warzone.com/MultiPlayer?GameID=34217026" target="_blank">tour finals game</a>, on turns 6 &amp; 7 both players gift a territory to each other. Similarly in this <a href="https://www.warzone.com/MultiPlayer?GameID=22213205" target="_blank">game</a> gifting the territory your opponent was about to attack gives a +2 adv.</p>
+
+<p>In <a href="https://www.warzone.com/MultiPlayer?GameID=37715739" target="_blank">Landria</a>, you start with 2 cards and get a new one every 8 turns. Artistically, the card fits the concept of trying to avoid owning adjacent territories in bonuses you don't own, as in the example game above, both players use the gift card to get short income boosts for one turn.</p>
+
+<p>Its most overpowerful ability comes in multi-attack games and the ability to stop chain-attacks. On this, in <a href="https://www.warzone.com/MultiPlayer?GameID=27236085" target="_blank">Bork</a> as seen on turn 3, you effectively stop the opponent's stack from interacting, which in combination with army cap is deadly. It finds a niche place in MA BIV on top, in games like <a href="https://www.warzone.com/MultiPlayer?GameID=39224977" target="_blank">this</a> where on turn 6 the gift + blockade combo gives you an easy solution to denying a bonus. Besides that, you can use the gift card when defending in very innovative ways like <a href="https://www.warzone.com/MultiPlayer?GameID=40629198" target="_blank">turn 3</a>, <a href="https://www.warzone.com/MultiPlayer?GameID=41147339" target="_blank">turn 3</a> and <a href="https://www.warzone.com/MultiPlayer?GameID=38091349" target="_blank">turn 3/4</a>.</p>
+
+<p>Lastly, in INSS templates an interesting case study arises where you can gift a negative territory to an opponent for a short income boost, as discussed previously.</p>
+
+<h3>Diplomacy</h3>
+
+<p>While this does exist in some very niche non-MTL templates, it finds its place only in <a href="https://www.warzone.com/MultiPlayer?GameID=40253047" target="_blank">Slow Burn</a>. It is an incredibly strong card, as it gives you 1 turn of tempo to do whatever you want. Usually you'll see players, just as illustrated in the link above, to play the card before blockading a choke-point. Other times you can simply use it while ahead in income but behind in armies, as in <a href="https://www.warzone.com/MultiPlayer?GameID=38423302" target="_blank">this game</a>. If you do manage to get the perfect counter as in <a href="https://www.warzone.com/MultiPlayer?GameID=41343288" target="_blank">here</a>, the game is usually won/lost on the spot. Similarly to Ebloc, the existence of this card dictates how you pick and how you use your recon card in Slow Burn.</p>
+
+<h3>Sanction</h3>
+
+<p>Check INSS section.</p>
+
+<h3>Reconnaissance</h3>
+
+<p>The recon card appears in 4 templates and is used to get information of your opponent's movements behind the fog and/or spawns. In BIV and GME you cannot use the recon card on Turn 1, but later on, to track your opponent's movements. In Slow Burn you can use it on Turn 1 which effectively means you can pick in a way of planning where you'll recon for information. Lastly, in Macedonia no split it's mostly useful for checking your opponent's army stacks.</p>
+
+<h3>Surveillance</h3>
+
+<p>This card is fairly impossible to balance and hasn't been a part of any strategic template that I know.</p>
+
+<h3>Blockade</h3>
+
+<p>Blockade appears in almost every single template. The idea behind the card generally speaking is to sacrifice a territory you own to a neutral blocking your opponent towards completing their goal. It happens at the very end of the turn.</p>
+
+<p>A unique way to use this card is explained in <a href="https://www.warzone.com/Forum/94540-blockade-pro" target="_blank">this Forum</a>, the so called timi-blockade. As explained in the Transfer-only section, a failed transfer-only move locks the armies in place. You can use that to blockade a territory in a safer way.</p>
+
+<p>You can expand on this idea through <a href="https://www.warzone.com/Forum/149405-trans-attc-percentage-cards?Offset=0" target="_blank">Frog's Tips</a>, although I've personally not cross-checked the validity nor usefulness of this:</p>
+<ul>
+    <li><code>d</code> – defenders (after deployments)</li>
+    <li><code>a</code> – enemy attackers (after his max deployment that you expect). If he goes to a stack of 40, a = 40, not 39, ignore 1-army stand guard here.</li>
+    <li><code>z<sub>1</sub></code> – neutral size you want if he <strong>does not</strong> attack for your blockade.</li>
+    <li><code>z<sub>2</sub></code> – neutral size you want if he <strong>does</strong> attack for your blockade.</li>
+    <li><code>f</code> – armies you issue as a transfer-only into the enemy territory (lock in place).</li>
+    <li><code>p &isin; [0, 1]</code> – fraction you pull back with a percentage transfer.</li>
+</ul>
+
+<p style="text-align: center;"><code>z<sub>1</sub> = d - p(d - f - 1)</code> &nbsp;&nbsp; (I)</p>
+<p style="text-align: center;"><code>z<sub>2</sub> = d - 0.6a - p(d - 0.6a - f - 1)</code> &nbsp;&nbsp; (II)</p>
+<p style="text-align: center;"><strong>p = (z<sub>2</sub> + 0.6a - d) / (-d + 0.6a + f + 1)</strong></p>
+<p style="text-align: center;"><strong>f = (a(3z<sub>1</sub> - 3) + (5 - 5d)z<sub>1</sub> + (5d - 5)z<sub>2</sub>) / (3a - 5z<sub>1</sub> + 5z<sub>2</sub>)</strong></p>
+
+<p>How to use, example <a href="https://www.warzone.com/MultiPlayer?GameID=11038333" target="_blank">game</a> from the Forum:</p>
+<ol>
+    <li>From TinyToad's POV, you want to blockade Panama (in Central America).</li>
+    <li>a is 40, his stack after max deploys. d is 31 cause we plan that.</li>
+    <li>I choose to blockade with 7 if he doesn't attack and 5 if he does attack.</li>
+    <li><code>f = 3.81</code> round to 4 -&gt; transfer only to the opponent.</li>
+    <li><code>p = 0.91</code> -&gt; 91% transfer back last move.</li>
+</ol>
+
+<p>You can use this <a href="https://docs.google.com/spreadsheets/d/1twgkhrvvzQ-SEY8ad3hSIEKupteou-Vpi9Ahl61yaOI/edit?usp=sharing" target="_blank">Spreadsheet</a> (it currently has the parameters listed above. Make a copy and insert your own scenario. I haven't seen this in action but play-tested a bit with its validity and it seems to work. For example in <a href="https://www.warzone.com/MultiPlayer?GameID=40353006" target="_blank">Turn 8</a>, let's say from sb's perspective Marcus can do a max 11 attack in Scandinavia (a = 12), and sb goes to d = 12. In the game he does transfer-only 4 and blocks with 5. Well what if we test blockade of 5 if Marcus doesn't attack and blockade of 3 if Marcus attacks (since his stack will be smaller and 3 -&gt; becomes 15 in this template). Inputting the number prints a transfer-only move of 1.3 -&gt; rounds to 1 with a 72% move backwards which according to my drunk calculations works.</p>
+<ul>
+    <li>If Marcus doesn't attack, it's 12vs12, 11 movable for sb, transfer-only 1 forward. now 10 movable. 72% back that's 7 armies transferred back. 12 - 7 = 5 -&gt; block of 5.</li>
+    <li>If Marcus attacks with 11, 12vs12 becomes 4vs5 (sb on 5, 4 movable). Transfer-only 1 forward (now 3 movable), then 72% transfer back -&gt; 2.16 -&gt; 2. From his 5 armies after the trade, sb transferred back 2. 5 - 2 = 3 -&gt; block of 3.</li>
+</ul>
+
+<p>While it is mathematically correct, any mis-sizes you witness might occur simply from rounding.</p>
+
+<h3>Bomb</h3>
+
+<p>There are no MTL templates featuring the Bomb Card. However, it used to be in Georgia AC back in <a href="https://www.warzone.com/MultiPlayer/Tournament?ID=21039" target="_blank">whenever</a>. It is the heart of one of the most popular templates, <a href="https://www.warzone.com/LadderSeason?ID=4095" target="_blank">Small Earth ComBomb</a>. The presence of the Bomb card comes with the fear to the opponent that it can be used at any time to cripple any army advantage. As far as I know it's a heavily unpopular card. It recently has been used in <a href="https://www.warzone.com/MultiPlayer/Tournament?ID=59911" target="_blank">Malvia 2vs2</a> as a way to get a +3 FTB on turn 1 by bombing a neutral, or as a way to push for elimination, again on turn 1. It follows the concept that you need to play or discard the card on turn 1, effectively balancing it, since the variance comes from the threat that the opponent can play it anytime, not the execution.</p>
+
+<h3>Order Priority</h3>
+
+<p>Order Priority guarantees for you first move in a specific turn. It is generally an incredibly strong card, that only gets stronger at reverse kill-rates.</p>
+
+<p>You can find a lot of scenarios that justify its usage which really narrow down to 3 ideas:</p>
+<ul>
+    <li>Dodging an opponent's stack to survive somewhere (<a href="https://www.warzone.com/MultiPlayer?GameID=21225771" target="_blank">Turn 12 by Beep</a>). Kind of a desperation move and sometimes high risk but useful in most vanilla and WR templates.</li>
+    <li>Sniping an opponent's stack of armies before they move / eliminating them (<a href="https://www.warzone.com/MultiPlayer?GameID=33424922" target="_blank">Turn 8</a>). Straightforward idea.</li>
+    <li>Getting better kill-rates (<a href="https://www.warzone.com/MultiPlayer?GameID=31218324" target="_blank">Turn 7</a>). The idea of using order priority to get a beneficial trade is mostly applicable to timid lands and fast earth. However, it can occasionally be helpful in every template.</li>
+    <li>Controlling move order. An idea behind this is explained also in <a href="https://www.warzone.com/Forum/149405-trans-attc-percentage-cards?Offset=0" target="_blank">Frog's tips</a>. A niche use of this comes with using the card, and attacking the opponent on your 2nd and 3rd attack, so they go in the same cycle. Another idea with this comes at using the order priority card to move last. For example in <a href="https://www.warzone.com/MultiPlayer?GameID=37803798" target="_blank">this Fast Earth game</a> on Turn 4, I use the card to make sure that a) my first move snipes his armies in Greenland and b) my 2nd move will come after his capture in Indonesia.</li>
+</ul>
+
+<h3>Order Delay</h3>
+
+<p>OD is encoded to create an entirely new phase of attacks/deploys as already discussed in the order delay phases section. For how it works read that. It is widely used and accepted in almost every vanilla SR and WR template. Its strength in these settings comes from the ability to simply out-delay an opponent on a very crucial turn, which often should result in better kill rates for you.</p>
+
+<p>Besides the very straightforward usage it can have, it's often part of the timi-blockade sequence.</p>
+
+<p>My advice would be to generally try and find good moves without using an OD card. In a Strat MME game where player A has already used their OD and player B hasn't, B always has an advantage. In contrast, you should not hoard the card over a turn where it would make a big difference. So in the end, there's a risk assessment factor of when, which conditions must be met, how, and the answer is it depends really. If you don't need to use it, then don't use it; it is strong enough to single-handedly win or lose you the game. For example my <a href="https://www.warzone.com/MultiPlayer?GameID=38360784" target="_blank">turn 6 usage</a> is simply not worth it, as I achieve nothing and live in fear over every other turn that I always might be outdelayed.</p>
+
+
+
+
+    </main>
+</body>
+</html>

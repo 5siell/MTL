@@ -1,0 +1,106 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+main, section {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+h1, h2, h3, h4 {
+    color: #ffffff;
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+    margin-top: 30px;
+}
+
+a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #252525;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+figure {
+    text-align: center;
+    margin: 30px 0;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #444;
+}
+
+figcaption {
+    color: #888;
+    font-size: 0.9em;
+    margin-top: 8px;
+}
+
+/* Navigation bar για τις επιμέρους σελίδες */
+.site-nav {
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e1e1e;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.home-btn {
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.home-btn:hover {
+    background: #444;
+    text-decoration: none;
+}
+
+select {
+    background: #2b2b2b;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 6px;
+    border-radius: 4px;
+}

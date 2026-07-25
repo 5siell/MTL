@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>MTL Strategy Guide</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <nav class='site-nav'>
+        <a href='index.html' class='home-btn'>ðŸ  Home / TOC</a>
+        <select onchange='if(this.value) window.location.href=this.value'>
+            <option value=''>-- Jump to Chapter --</option>
+            <option value='00Abstract.html'>1. Abstract</option>
+            <option value='01Introduction.html'>2. Introduction</option>
+            <option value='02UsefulLinks.html'>3. Useful Links</option>
+            <option value='03GeneralThings.html'>4. General Things</option>
+            <option value='04MoveOrderandPickingPhase.html'>5. Move Order & Picking</option>
+            <option value='05GeneralGameplay.html'>6. General Gameplay</option>
+            <option value='06Rounding.html'>7. Rounding</option>
+            <option value='07CardSettings.html'>8. Card Settings</option>
+            <option value='08SpecificTricks.html'>9. Specific Tricks</option>
+        </select>
+    </nav>
+    <main>
+<section id="introduction">
+    <h1>Introduction</h1>
+
+    <p><a href="http://www.warlight-mtl.com/" target="_blank">http://www.warlight-mtl.com/</a></p>
+
+    <p>In case you are not familiar with it, MTL was designed and is maintained by Warzone players, and is a multi-day ladder based on 51 different 1vs1 templates. Besides the in-game built ladders, <a href="https://www.warzone.com/Forum/262655-awp-world-tour-magazine" target="_blank">AWP</a>, and other fun competitions, the MTL is thought to be at the top of strategic game-play. Mentioning strategicness, we are introducing a hot topic (<a href="https://www.warzone.com/Forum/721296-makes-template-strategic" target="_blank">Latest Forum Post</a>) that has been discussed extensively. The simplest possible definition is unequivocally <a href="https://www.warzone.com/Forum/721296-makes-template-strategic?Offset=16" target="_blank">Beep's</a> comment that a template is simply strategic when the better player wins more often, coming in terms with <a href="https://www.warzone.com/Forum/721296-makes-template-strategic?Offset=8" target="_blank">Ares'</a> comment stating that the number of "coin-flips" is inversely correlated with how strategic a template is. Based on the latter approach, a template that allows deep calculations many turns in advanced should be the most strategic one, but one quickly can derive that if a template can be mathematically solved then by definition it becomes a "coin-flip" on picking phase, assuming both players are masters at calculating the perfect moves.</p>
+
+    <p>But do we need perfect moves and gameplay to win? If we accept the small but not negligible inherent randomness present in the game of Warzone, deriving from the player being able to win a game without playing the perfect moves, then randomness is undoubtedly present. With this, I introduce topics like "Meta-gaming", "Pattern Recognition" and "Risk Management" with relevant forum posts like <a href="https://www.warzone.com/Forum/52866-metagame" target="_blank">2014</a> and <a href="https://www.warzone.com/Forum/735633-pinnacle-metagaming" target="_blank">2023</a>. Imagine yourself playing in the 1vs1 Ladder and you are facing player X. You check their history and find out that in the last 10 games, they always prioritise Australia/Indonesia for their safety + a cover spot somewhere else. Meta-gaming introduces the aspect of playing in a template in a different than optimal way in order to counter a specific play-style. If you are unfamiliar with the term here are a couple of examples of games include gameplay that involves bold predictions. <a href="https://www.warzone.com/MultiPlayer?GameID=37186464" target="_blank">Octane vs Jack Norris, MTL</a>, <a href="https://www.warzone.com/MultiPlayer?GameID=36615381" target="_blank">Tactique vs Arc-77, 1vs1 Ladder</a>, <a href="https://www.warzone.com/MultiPlayer?GameID=35830458" target="_blank">Rufus vs Tac(ky)tical, CW</a>.</p>
+
+    <p>During it's first years of release, Warzone (made by <a href="https://www.warzone.com/Profile?p=62456969&u=Fizzer_1" target="_blank">Fizzer</a>), included more than usual inherently random settings like WR, Luck, random move order, and other factors. As the game evolved and players became better at the game, the general consensus on a lot of settings and principles has changed. In 2016, after months of preparation, a custom-made ladder build on Warzone's CLOT and API was built by the cumulative effort of a lot of players from that era (<a href="https://www.warzone.com/Forum/216823-multiday-ladder" target="_blank">Forum Post, 27th of October, 2016</a>), with <a href="https://www.warzone.com/Profile?p=2428496679&u=Deadman_4" target="_blank">Deadman</a> being central figure and initiator of the project. MTL's (previously called MDL) history is long, extensive, and not necessarily recorded in forums, nevertheless some of the people that have helped in one way or another since 2016 include:</p>
+    
+    <ul>
+        <li>As aforementioned, <a href="https://www.warzone.com/Profile?p=62456969&u=Fizzer_1" target="_blank">Fizzer</a> and <a href="https://www.warzone.com/Profile?p=2428496679&u=Deadman_4" target="_blank">Deadman</a> with Fizzer creating and maintaining Warzone and it's CLOT framework over more than a decade, and DeadMan creating the MTL and maintaining for over 5 years. Following his retirement, <a href="https://www.warzone.com/Profile?p=314032996&u=Beren%20Erchamion_1" target="_blank">Beren Erchamion</a> picked up the project as it's manager.</li>
+        <li><a href="https://www.warzone.com/Profile?p=253091943&u=Math%20Wolf_1" target="_blank">Math Wolf</a>, in coordination with <a href="https://www.warzone.com/Profile?p=2428496679&u=Deadman_4" target="_blank">Deadman</a>, designed the rating system behind it.</li>
+        <li><a href="https://www.warzone.com/Profile?p=314032996&u=Beren%20Erchamion_1" target="_blank">Beren Erchamion</a>, as well as <a href="https://www.warzone.com/Profile?p=1277277659&u=JustinR17_1" target="_blank">JustinR17</a> have been maintaining it over the last year(s).</li>
+        <li><a href="https://www.warzone.com/Profile?p=486201411&u=ps_1" target="_blank">ps</a> and <a href="https://www.warzone.com/Profile?p=2211733141&u=Muli_1" target="_blank">Muli</a> made contributions in the MTL's early stages</li>
+        <li><a href="https://www.warzone.com/Profile?p=1527785728&u=GiantFrog_1" target="_blank">GiantFrog</a> along with <a href="https://www.warzone.com/Profile?p=314032996&u=Beren%20Erchamion_1" target="_blank">Beren Erchamion</a> designed the veto adjustment algorithm.</li>
+        <li><a href="https://www.warzone.com/Profile?p=257509174&u=malakkan_1" target="_blank">Malakkan</a>, <a href="https://www.warzone.com/Profile?p=2214950915&u=master+of+desaster_1" target="_blank">master of desaster</a> and a lot of other people who contributed in getting a membership for the CLOT account <a href="https://www.warzone.com/Forum/216823-multiday-ladder?Offset=720" target="_blank">Pages 37,38, Forum</a></li>
+    </ul>
+
+    <p>Why should I join the MTL? I will quote <a href="https://www.warzone.com/Profile?p=257509174&u=malakkan_1" target="_blank">Malakkan's</a> invitation back in <a href="https://www.warzone.com/Forum/216823-multiday-ladder?Offset=888" target="_blank">2018</a>:</p>
+
+    <p><em>Whether you are in a competitive mindset, or willing to improve, or just in the mood for a few extra casual MD games on cool strat settings, that shall be the place to go.</em></p>
+
+    <p><strong>Casual players</strong> : sure Quickmatches are cool. But the matchmaking there is often disappointing and you may be fed up with people who leave without saying goodbye (good news, there is a boot filter on the MTL), or tired of getting farmed by Rufus/Timi/alex (good news : the matchmaking mechanism on the MTL is relevant), or, with all those bad non-strategic templates you've already vetoed, you are starting to get bored of the same 10 templates you're playing (good news : all of the 47(47 in 2018, 51 as of 2024) templates on MTL are strategic and you even have a few vetoes if you are allergic to MA).</p>
+
+    <p><strong>Willing to improve</strong> : maybe you have already found one of those formidable tutors in the community (there are a few, and they are doing a great job) and you are having a nice run on the 1v1 ladder. Maybe you have teamed up on the 2v2 ladder with a clanmate who delegates to you the task of counting. Maybe you have already heard about the MTL and had a look at it but were displeased to see it includes WR, or thought that it was too much of an effort to learn so many templates. Well I think you should think twice about it :</p>
+    
+    <ul>
+        <li>joining the MTL will certainly not hurt you : who cares about a few initial defeats and a disappointing rating when starting ? Playing and losing is certainly the best way to understand a template. Once you've played it and got a feeling, you may have a look at a few games by good players (the website allows you to dive into more than 17,000 games if you want to) (more than 67,000 as of April 2024)</li>
+        <li>it might make you discover and enjoy a bit of the depth of the game. 0% SR is fine and correctly counting the number of leftovers on the board can be satisfying, but Warzone is much richer than a super-sudoku puzzle (@<a href="https://www.warzone.com/Profile?p=1390562978&u=89thlap_1" target="_blank">89thlap</a>) : it is also about risk management, pattern recognition and meta-gaming; and most of the fun and skill is there.</li>
+        <li>it shall make you learn a lot and improve : playing non-standard settings will help you get a better understanding of those aspects of the game. Is the board brawly or expansionist ? How do I balance my picking strategy between early income and coverage ? How shall I behave in a brawl ? Will Rufus defend his bonus ? (hint : he probably will not)</li>
+    </ul>
+
+    <p><strong>Competitive player</strong> : let's stop complaining about the flaws of Bayes Elo or QM rating inflation; Math Wolf and Deadman have crafted for you the rating system you have always dreamt of. Let's stop posting on boring threads about stalling and undeserved trophies; the only reason Rufus has been no.1 for 100 days is because you weren't there to kick him of his throne.<br>
+    So you know what you have to do : go there <a href="http://www.warlight-mtl.com/" target="_blank">MTL</a>, click the Login button, choose a number of simultaneous games and join the fight.</p>
+</section>
+    </main>
+</body>
+</html>
