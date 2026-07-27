@@ -7,7 +7,7 @@ $headerTemplate = "<!DOCTYPE html>
 </head>
 <body>
     <nav class='site-nav'>
-        <a href='index.html' class='home-btn'>🏠 Home / TOC</a>
+        <a href='index.html' class='home-btn'>Home / TOC</a>
         <select onchange='if(this.value) window.location.href=this.value'>
             <option value=''>-- Jump to Chapter --</option>
             <option value='00Abstract.html'>1. Abstract</option>
@@ -20,7 +20,7 @@ $headerTemplate = "<!DOCTYPE html>
             <option value='07CardSettings.html'>8. Card Settings</option>
             <option value='08SpecificTricks.html'>9. Specific Tricks</option>
             <option value='09WRIntroduction.html'>10. WR Introduction</option>
-            <option value='10WRKillRates.html'>11. WR Kill Rates </option>
+            <option value='10WRKillRates.html'>11. WR Kill Rates</option>
         </select>
     </nav>
     <main>"
@@ -29,14 +29,21 @@ $footerTemplate = "    </main>
 </body>
 </html>"
 
-$files = Get-ChildItem -Path . -Filter "0*.html"
-Write-Host "Vrethikan $($files.Count) arxeia." -ForegroundColor Cyan
+# Παίρνουμε ΟΛΑ τα html και φιλτράρουμε με regex όσα ξεκινούν με 2 ψηφία (π.χ. 00, 01, 10...)
+$files = Get-ChildItem -Path . -Filter "*.html" | Where-Object { $_.Name -match '^\d{2}' }
+Write-Host "Vrethikan $($files.Count) arxeia me psifia." -ForegroundColor Cyan
 
 foreach ($file in $files) {
-    Write-Host "Epexergasia tou: $($file.Name)" -ForegroundColor Yellow
     $content = Get-Content $file.FullName -Raw -Encoding utf8
-    $wrapped = $headerTemplate + "`n" + $content + "`n" + $footerTemplate
-    Set-Content -Path $file.FullName -Value $wrapped -Encoding utf8
+    
+    # Έλεγχος για να μην ξανατυλίξουμε αρχεία που έχουν ήδη το menu μέσα
+    if ($content -notmatch "site-nav") {
+        Write-Host "Epexergasia kai tyligma tou: $($file.Name)" -ForegroundColor Yellow
+        $wrapped = $headerTemplate + "`n" + $content + "`n" + $footerTemplate
+        Set-Content -Path $file.FullName -Value $wrapped -Encoding utf8
+    } else {
+        Write-Host "To arxeio $($file.Name) einai idi etoimo (skipped)." -ForegroundColor DarkGray
+    }
 }
 
 Write-Host "Oles oi allages oloklirothikan!" -ForegroundColor Green
