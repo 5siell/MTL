@@ -19,6 +19,8 @@ $headerTemplate = "<!DOCTYPE html>
             <option value='06Rounding.html'>7. Rounding</option>
             <option value='07CardSettings.html'>8. Card Settings</option>
             <option value='08SpecificTricks.html'>9. Specific Tricks</option>
+            <option value='09WRIntroduction.html'>10. WR Introduction</option>
+            <option value='10WRKillRates.html'>11. WR Kill Rates </option>
         </select>
     </nav>
     <main>"

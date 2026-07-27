@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>MTL Strategy Guide</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <nav class='site-nav'>
+        <a href='index.html' class='home-btn'>ðŸ  Home / TOC</a>
+        <select onchange='if(this.value) window.location.href=this.value'>
+            <option value=''>-- Jump to Chapter --</option>
+            <option value='00Abstract.html'>1. Abstract</option>
+            <option value='01Introduction.html'>2. Introduction</option>
+            <option value='02UsefulLinks.html'>3. Useful Links</option>
+            <option value='03GeneralThings.html'>4. General Things</option>
+            <option value='04MoveOrderandPickingPhase.html'>5. Move Order & Picking</option>
+            <option value='05GeneralGameplay.html'>6. General Gameplay</option>
+            <option value='06Rounding.html'>7. Rounding</option>
+            <option value='07CardSettings.html'>8. Card Settings</option>
+            <option value='08SpecificTricks.html'>9. Specific Tricks</option>
+            <option value='09WRIntroduction.html'>10. WR Introduction</option>
+            <option value='10WRKillRates.html'>11. WR Kill Rates </option>
+        </select>
+    </nav>
+    <main>
+<h2>WR</h2>
+
+<h3>Theory</h3>
+
+<p>WR, short for weighted random, is one of the two settings used for rounding in kill-rates. While in the section for kill-rates I referred to SR 0% luck as deterministic settings, WR works in a different way, where when you perform an attack of 3 armies against a 2 army neutral, the outcome is based on probabilities.</p>
+
+<p>For each attack the game computes <code>E = armies × kill-rate</code> then turns that fractional expectation E into a whole number of kills with a single, biased coin-flip. In a 4vs3 scenario, <code>4 × 0.6 = 2.4</code> results in a 60% chance to kill 2 defenders and a 40% chance to kill 3 defenders. WR never gives "wild rolls" that are 2–3 more values away from the expectation; its outcome comes at ±0.8 variance at most.</p>
+
+<p>WR templates are played in a completely different style than SR ones, and although the principles you know and apply in SR are universal, the game here revolves more around knowing when to take a risk and when not to. You'll find that a lot of WR templates resort to including RMO, as a way that balances out the luck aspect of the game, as in "you can get lucky with WR, but your opponent can get lucky with RMO".</p>
+
+<h3>Templates</h3>
+
+<p>There are currently ten different WR templates in the MTL, with six out of those having all around the same settings but different map dynamics and cards. These templates are given in the table below.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; font-size: 0.9em;">
+    <thead>
+        <tr style="background-color: #e6f2ff;">
+            <th>Template (Name)</th>
+            <th>Move order</th>
+            <th>Init terr</th>
+            <th>Arm / Init terr</th>
+            <th>Neutr Size</th>
+            <th>Neutr in Dist</th>
+            <th>Wasts (#)</th>
+            <th>Waste Size</th>
+            <th>Income (base)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Belarus</td>
+            <td>cycle</td>
+            <td>3</td>
+            <td>6</td>
+            <td>3</td>
+            <td>2</td>
+            <td>35</td>
+            <td>2</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Great Lakes</td>
+            <td>cycle</td>
+            <td>4</td>
+            <td>5</td>
+            <td>3</td>
+            <td>2</td>
+            <td>15</td>
+            <td>4</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>British Raj</td>
+            <td>random</td>
+            <td>4</td>
+            <td>4</td>
+            <td>2</td>
+            <td>2</td>
+            <td>7</td>
+            <td>12</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Randomized Strat ME</td>
+            <td>random</td>
+            <td>3</td>
+            <td>4</td>
+            <td>2</td>
+            <td>4</td>
+            <td>7</td>
+            <td>10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Strat ME</td>
+            <td>random</td>
+            <td>3</td>
+            <td>4</td>
+            <td>2</td>
+            <td>4</td>
+            <td>7</td>
+            <td>10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Phobia</td>
+            <td>random</td>
+            <td>3</td>
+            <td>4</td>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+            <td>10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Final Fantasy VII</td>
+            <td>random</td>
+            <td>3</td>
+            <td>4</td>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+            <td>10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Tor-ture</td>
+            <td>random</td>
+            <td>4</td>
+            <td>4</td>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+            <td>10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Strategic Commanders</td>
+            <td>cycle</td>
+            <td>3</td>
+            <td>4</td>
+            <td>3</td>
+            <td>5</td>
+            <td>7</td>
+            <td>10</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Pangea Ultima</td>
+            <td>cycle</td>
+            <td>3</td>
+            <td>2</td>
+            <td>2</td>
+            <td>4</td>
+            <td>8</td>
+            <td>10</td>
+            <td>6</td>
+        </tr>
+    </tbody>
+    <caption><strong>Table:</strong> Weighted-Random templates ordered on Armies per Initial Territory and Income</caption>
+</table>
+
+<h3>Probabilities &amp; Expanding Efficiently</h3>
+
+<p>While in SR there are strict income transition principles, WR is more about probabilities. As it is rather time-consuming to calculate probabilities, I will give you in this section some of the different scenarios as well as the way to optimize your moves as fast as possible.</p>
+
+<p>Consider the scenario of a single pick in a central territory of a +3 bonus in a template like Strat ME as in Antarctica in <a href="https://www.warzone.com/MultiPlayer?GameID=13172709" target="_blank">this game</a>. This unintuitive idea is theoretically possible, just not probable, in Strat ME. Since you have to queue three attacks of 3/3/2 on Turn 1 in order to finish the bonus, all three must succeed:</p>
+<ul>
+    <li>3vs2, 3 attackers capture 2 neutrals: <code>3 × 0.6 = 1.8 → 80%</code> of the time.</li>
+    <li>2vs2, 2 attackers capture 2 neutrals: <code>2 × 0.6 = 1.2 → 20%</code> of the time.</li>
+</ul>
+
+<p>For all three to succeed, <code>P = P<sub>3</sub> × P<sub>3</sub> × P<sub>2</sub> = 0.8 × 0.8 × 0.2 = 0.128</code> or <strong>12.8%</strong>.</p>
+
+<figure style="text-align: center; margin: 20px 0;">
+    <img src="Images/loveant.jpg" alt="+3 FTB in WR" style="max-width: 70%; height: auto;">
+    <figcaption style="font-size: 0.9em; color: #555;">+3 FTB in WR</figcaption>
+</figure>
+
+<p>We can extend this idea to completing a +4 bonus in Strat ME either in one or in two turns with a single pick. The possible sequences you can follow are:</p>
+<ol>
+    <li>4x +2 attacks on Turn 1</li>
+    <li>Single +8 attack on Turn 1 into 3 attacks on Turn 2</li>
+    <li>Split Turn 1 into attacks of 3 &amp; 5</li>
+    <li>Split Turn 1 into attacks of 4 &amp; 4</li>
+</ol>
+
+<h4>4x +2 attacks on Turn 1</h4>
+<p>If you do this I suggest uninstalling the game and converting to roulette. But if you do decide to do it, the probability to finish the bonus comes at <code>0.2<sup>4</sup></code> or 0.16%.</p>
+
+<h4>Single +8 attack on Turn 1 into 3 attacks on Turn 2</h4>
+<p>To track the overall chance to finish the bonus following this sequence:</p>
+<ul>
+    <li>On Turn 1 we lose 1 attacker -&gt; 6 movable left (60%). On Turn 2 we do 4/4/3 attacks, that's an 80% chance all three succeed (capture). Overall <code>0.6 × 0.8 = 0.48</code> -&gt; 48% chance to complete bonus.</li>
+    <li>On Turn 1 we lose 2 attackers -&gt; 5 movable left (40%). On Turn 2 we need 4/3/3 attacks to finish bonus, that's <code>0.8 × 0.8 = 0.64</code> chance those two attacks succeed (capture). Overall <code>0.4 × 0.8 × 0.8 = 0.256</code> -&gt; 25.6% chance to complete bonus.</li>
+    <li>Adding the 2 different scenarios together, there's an overall <strong>73.6%</strong> chance of finishing the bonus on Turn 2.</li>
+</ul>
+
+<figure style="float: right; margin: 0 0 15px 20px; text-align: center; max-width: 250px;">
+    <img src="Images/wrsc1.jpg" alt="Single attack of 8" style="width: 100%; height: auto;">
+    <figcaption style="font-size: 0.9em; color: #555;">Single attack of 8. Losing either 1 or 2 attackers (in the picture 1). Requiring three attacks on Turn 2</figcaption>
+</figure>
+
+<h4>Split Turn 1 into attacks of 3 &amp; 5</h4>
+<p>This is a rather more complicated calculation:</p>
+<ol>
+    <li>On Turn 1, two attacks are queued, a 5vs2 and a 3vs2 attack.
+        <ul>
+            <li>5vs2 always works, 60% for -1 attacker, 40% for -2 attackers.</li>
+            <li>3vs2 doesn't work always. In fact the probabilities are given by the equations:
+                <p style="text-align: center;"><code>P(C &and; L<sub>1</sub>) = 0.48</code><br><code>P(C &and; L<sub>2</sub>) = 0.32</code><br><code>P(&not;C &and; L<sub>1</sub>) = 0.12</code><br><code>P(&not;C &and; L<sub>2</sub>) = 0.08</code></p>
+                where <code>C</code> denotes capturing the neutral, <code>&not;C</code> denotes not capturing the neutral, and <code>L<sub>k</sub></code> the number of attackers lost. For example, for not capturing the neutral (20%) and losing 2 attackers (40%), overall probability comes at <code>0.2 × 0.4</code>.
+            </li>
+        </ul>
+    </li>
+    <li>After Turn 1, there are 8 scenarios and different approaches on Turn 2.</li>
+    <li>It can be calculated that the overall success probability comes at <strong>94.368%</strong> and chance to fail at <strong>5.632%</strong>.</li>
+</ol>
+
+<figure style="text-align: center; margin: 20px 0;">
+    <img src="Images/wr_probabilitie.jpg" alt="Probability tree for doing split attacks of 3 and 5 Turn 1" style="max-width: 70%; height: auto;">
+    <figcaption style="font-size: 0.9em; color: #555;">Probability tree for doing split attacks of 3 and 5 Turn 1</figcaption>
+</figure>
+
+<p>If it helps at understanding when completing the +4 bonus can fail, denoting as b1–b8 from left to right the scenarios above:</p>
+<ul>
+    <li><strong>b1:</strong> -1 attacker from 5vs2 and 0.48 scenario from 3vs2 (capture and -1 attacker). b1 comes at <code>0.6 × 0.48 = 0.288 → 28.8%</code> of the times. Can always finish bonus with 2x 4vs2 attacks.</li>
+    <li><strong>b2:</strong> <code>0.6 × 0.32 = 0.192</code>, always have enough to finish bonus on Turn 2.</li>
+    <li><strong>b3:</strong> <code>0.6 × 0.12 = 0.072</code>, always have enough to finish bonus on Turn 2.</li>
+    <li><strong>b4:</strong> <code>0.6 × 0.08 = 0.048</code>. Attack of 3vs2 has failed and we lost 2 attackers, so we need +1 deployed to get the now 1-army neutral with a 2-attack. Besides that we have +1 deployed for a 4-army attack and +3 deployed for a 3-army attack. Risk involved. In this subscenario 80% of the time we complete bonus, 20% we don't (due to the 3-attack). Chance to fail at <code>0.048 × 0.2 = 0.0096</code>.</li>
+    <li><strong>b5:</strong> <code>0.4 × 0.48 = 0.192</code>, Turn 2 we deploy 2+3, always enough to finish bonus.</li>
+    <li><strong>b6:</strong> <code>0.4 × 0.32 = 0.128</code>, need a 3-attack on turn 2, so <code>0.128 × 0.2 = 0.0256</code> chance to fail.</li>
+    <li><strong>b7:</strong> <code>0.4 × 0.12 = 0.048</code>, need a 3-attack on turn 2, so <code>0.048 × 0.2 = 0.0096</code> chance to fail.</li>
+    <li><strong>b8:</strong> <code>0.4 × 0.08 = 0.032</code>, need two 3-attacks on turn 2, so <code>0.032 × (1 - (0.8 × 0.8)) = 0.01152</code> chance to fail.</li>
+</ul>
+<p>Overall chance to fail by adding b4, b6, b7, b8 is 5.632%.</p>
+
+<h4>Split Turn 1 into attacks of 4 &amp; 4</h4>
+<p>Following the same logic:</p>
+<ol>
+    <li>Two attacks of 4vs2 occur on Turn 1. Each attack always captures but comes at a 60% chance of having -1 attacker and a 40% chance of having -2 attackers.</li>
+    <li>As a result there are three scenarios:
+        <ul>
+            <li><strong>c1:</strong> <code>0.6 × 0.6 = 0.36</code> or 36% of the times we lose -1 attacker on each attack. In this scenario, we always have enough armies to finish bonus on Turn 2 (2+2 deployed and 1 elsewhere).</li>
+            <li><strong>c2:</strong> <code>0.6 × 0.4 × 2 = 0.48</code> or 48% of the times we lose -1 attacker on one and -2 attackers on the other attack. In this scenario, we always have enough armies to finish bonus on Turn 2 (2+3 deployed).</li>
+            <li><strong>c3:</strong> <code>0.4 × 0.4 = 0.16</code> or 16% of the times we lose -2 attackers on each attack. In this scenario, we have to gamble at least one 3-attack to finish the bonus. Chance to fail comes at <code>0.16 × 0.2 = 0.032 → 3.2%</code>.</li>
+        </ul>
+    </li>
+</ol>
+
+<p>To sum up all the above calculations, you can take four approaches of completing a +4 bonus in Strat ME or its clones (Scenario 1 is as an FTB, Scenarios 2–4 for completing it by the end of Turn 2), with the results shown in the table below.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #e6f2ff;">
+            <th>Attack plan (Turn-sequence)</th>
+            <th>Success prob. (%)</th>
+            <th>Failure prob. (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>4 × +2 attacks on T1</td>
+            <td>0.16%</td>
+            <td>99.84%</td>
+        </tr>
+        <tr>
+            <td>+8 attack on T1 → 3 attacks on T2</td>
+            <td>73.6%</td>
+            <td>26.4%</td>
+        </tr>
+        <tr>
+            <td>Split T1 into 3 &amp; 5 attacks</td>
+            <td>94.368%</td>
+            <td>5.632%</td>
+        </tr>
+        <tr>
+            <td>Split T1 into 4 &amp; 4 attacks</td>
+            <td>96.8%</td>
+            <td>3.2%</td>
+        </tr>
+    </tbody>
+    <caption><strong>Table:</strong> Success / failure probabilities for alternative bonus-capture lines of a +4 bonus in Strat ME clones.</caption>
+</table>
+
+<p>Use the methodology above in whichever scenario comes up to calculate the optimal way of expanding in whichever template/distribution you are playing. All that really matters is understanding why "more attacks" is a beneficial thing (as shown below).</p>
+
+<div style="display: flex; justify-content: space-between; margin: 20px 0;">
+    <figure style="width: 48%; text-align: center; margin: 0;">
+        <img src="Images/44wrsplit.jpg" alt="Split attacking with 4 &amp; 4" style="width: 100%; height: auto; max-height: 400px; object-fit: contain;">
+        <figcaption style="font-size: 0.9em; color: #555;">Split attacking with 4 &amp; 4</figcaption>
+    </figure>
+    <figure style="width: 48%; text-align: center; margin: 0;">
+        <img src="Images/single8wr.jpg" alt="Single 8 attack" style="width: 100%; height: auto; max-height: 400px; object-fit: contain;">
+        <figcaption style="font-size: 0.9em; color: #555;">Single 8 attack</figcaption>
+    </figure>
+</div>
+
+<p>This has a further application when considering the usefulness of leftover armies. Taking into consideration <a href="https://www.warzone.com/Forum/149405-trans-attc-percentage-cards?Offset=0" target="_blank">Frog's Tips</a>, you'll see in games like <a href="https://www.warzone.com/MultiPlayer?GameID=14703564" target="_blank">this, Turn 1 SEA</a> and <a href="https://www.warzone.com/MultiPlayer?GameID=7926274" target="_blank">here, Turn 1 East China</a>, the players go for 3-army attacks on Turn 1 attempting to finish their bonuses. If the reason doesn't come intuitively, since the goal is to complete the bonus by the end of T2, a 3-attack over the course of two turns captures the bonus 92% of the time. It boils down to:</p>
+
+<p style="text-align: center;"><code>a1) P(C &and; L<sub>1</sub>) = 0.8 × 0.6 = 0.48</code><br><code>a2) P(C &and; L<sub>2</sub>) = 0.8 × 0.4 = 0.32</code><br><code>a3) P(&not;C &and; L<sub>1</sub>) = 0.2 × 0.6 = 0.12</code><br><code>a4) P(&not;C &and; L<sub>2</sub>) = 0.2 × 0.4 = 0.08</code></p>
+
+<ul>
+    <li>In Scenarios a1 and a2, we successfully capture (80% chance) and have either -1 or -2 attackers.</li>
+    <li>In Scenario a3, the 3vs2 doesn't go our way but we only lost 1 attacker and do not need to deploy another army so as to capture the territory on Turn 2, as for example in <a href="https://www.warzone.com/MultiPlayer?GameID=26746732" target="_blank">this game</a> in SEA Turn 1.</li>
+    <li>a3 is the only scenario where we don't capture on Turn 1 and need to deploy +1 on Turn 2.</li>
+</ul>
+    </main>
+</body>
+</html>

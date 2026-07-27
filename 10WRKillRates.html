@@ -1,0 +1,165 @@
+<h2>WR</h2>
+
+<h3>Kill-Rates</h3>
+
+<p>We analyzed some sections ago how Kill-Rates are of utmost importance in SR, as the game is deterministic and some attacks are strictly always better. In WR that is and isn't the case. It's a sensitive subject. I have found for example that attacks at multipliers of 5 aren't really worth it. For example <a href="https://www.warzone.com/MultiPlayer?GameID=30166708" target="_blank">here</a> Octane captures a 3-army neutral with a 4-attack because he wants to maximize his chances to getting to 12 end of T2. If the attack doesn't work (60% of the time it doesn't work), the 3 army neutrals either kill 2 (90%) or 3 (10%) attackers. On the 90% scenario, Octane can capture that territory with a 2v1 attack without any deployment on T2. Overall this means that if Octane wants to capture that territory with 4 attackers regardless of whether that's on T1 or T2, only 6% of the time he'd have to deploy +1 T2 (0.6 x 0.1).</p>
+
+<p>The take-away is that in WR there are a lot of circumstances you will want, deliberately, to attack with something like 14 attackers hoping for the 40% roll on killing 9 defenders. Or defending with 9 because 9 x 0.7 = 6.3 if you sneak a -7 attackers that's awesome. If you have no idea what I'm talking about, revisit Tables 1 and 2 from the SR section as well as their corresponding sections.</p>
+
+<p>Regarding the attacker curves (see table below), residue 1 and 3 still give you that 60% and 80% shot at one extra kill at no extra cost (like the 3, 6, 8, 11 etc. attacks in SR). <strong>Multiples of 5 give 0 advantage</strong> (besides precision which rarely matters in WR). Residue of 4 gives you a 40% chance free kill. Attack of 4 in neutral of 3 as we said captures on T1 40% of the time and on T2 94% of the time. Residue of 2 you are pushing your luck.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #e6f2ff;">
+            <th>r (mod 5)</th>
+            <th>E = 0.6, n</th>
+            <th>Fractional Part</th>
+            <th>P(+1 extra kill)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>0</td><td><code>3k.0</code></td><td>0</td><td>0% (deterministic)</td></tr>
+        <tr><td>1</td><td><code>3k.6</code></td><td>0.6</td><td><strong>60%</strong></td></tr>
+        <tr><td>2</td><td><code>3k.2</code></td><td>0.2</td><td>20%</td></tr>
+        <tr><td>3</td><td><code>3k.8</code></td><td>0.8</td><td><strong>80%</strong></td></tr>
+        <tr><td>4</td><td><code>3k.4</code></td><td>0.4</td><td>40%</td></tr>
+    </tbody>
+    <caption><strong>Table:</strong> Attacker curves 60% KR, modulo-5, WR</caption>
+</table>
+
+<p>Regarding the defender curves (see table below):</p>
+<ul>
+    <li>The best defender residues statistically are <code>7 &gt; 4 &gt; 1 &gt; 8 &gt; 5</code>.</li>
+    <li>Defenders of 10 are perfect (good and bad, just 0 variance).</li>
+</ul>
+<p>But isn't it just so tempting knowing that you can defend with 2 and attack 2 attackers 40% of the time? Ideally, fit moves for your position. Generally low fractional parts are worthwhile when:</p>
+<ul>
+    <li>The break is fatal to the opponent and the 20% shot is worth burning extra armies.</li>
+    <li>You would deploy those armies there anyway.</li>
+</ul>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #e6f2ff;">
+            <th>r (mod 10)</th>
+            <th>E = 0.7, n</th>
+            <th>Fractional Part</th>
+            <th>P(+1 extra kill)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>0</td><td><code>3k.0</code></td><td>0</td><td>0% (deterministic)</td></tr>
+        <tr><td>1</td><td><code>3k.7</code></td><td>0.7</td><td><strong>70%</strong></td></tr>
+        <tr><td>2</td><td><code>3k.4</code></td><td>0.4</td><td>40%</td></tr>
+        <tr><td>3</td><td><code>3k.1</code></td><td>0.1</td><td>10%</td></tr>
+        <tr><td>4</td><td><code>3k.8</code></td><td>0.8</td><td><strong>80%</strong></td></tr>
+        <tr><td>5</td><td><code>3k.5</code></td><td>0.5</td><td>50%</td></tr>
+        <tr><td>6</td><td><code>3k.2</code></td><td>0.2</td><td>20%</td></tr>
+        <tr><td>7</td><td><code>3k.9</code></td><td>0.9</td><td><strong>90%</strong></td></tr>
+        <tr><td>8</td><td><code>3k.6</code></td><td>0.6</td><td><strong>60%</strong></td></tr>
+        <tr><td>9</td><td><code>3k.3</code></td><td>0.3</td><td>30%</td></tr>
+    </tbody>
+    <caption><strong>Table:</strong> Defender curves 70% KR, modulo-10, WR</caption>
+</table>
+
+<p>Beyond that, the wildest difference between SR and WR comes at n!: n! fronts. Take SR fronts for instance, and the first 22 scenarios in the table below (example: a front of 12vs12 where both players attack each other results in 4vs5, difference 1). This verifies previous tables from the SR Kill-Rate section. In fact, in SR 60/70 kill-rates and n!:n! fronts where both players attack each other, the defender will capture back only on 3 occasions: the 5vs5 → 1vs3 → 2 capture 1, the 8vs8 → 2vs4 → 3 capture 2, and the 15vs15 → 4vs7 → 6 capture 4. <em>(So really in SR just don't do inefficient attacks.)</em></p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #e6f2ff;">
+            <th>Attackers before</th>
+            <th>Defenders before</th>
+            <th>Attackers after</th>
+            <th>Defenders after</th>
+            <th>Difference</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>2</td><td>2</td><td>1</td><td>1</td><td>0</td></tr>
+        <tr><td>3</td><td>3</td><td>1</td><td>2</td><td>1</td></tr>
+        <tr><td>4</td><td>4</td><td>1</td><td>2</td><td>1</td></tr>
+        <tr><td>5</td><td>5</td><td>1</td><td>3</td><td>2</td></tr>
+        <tr><td>6</td><td>6</td><td>2</td><td>3</td><td>1</td></tr>
+        <tr><td>7</td><td>7</td><td>2</td><td>3</td><td>1</td></tr>
+        <tr><td>8</td><td>8</td><td>2</td><td>4</td><td>2</td></tr>
+        <tr><td>9</td><td>9</td><td>3</td><td>4</td><td>1</td></tr>
+        <tr><td>10</td><td>10</td><td>3</td><td>5</td><td>2</td></tr>
+        <tr><td>11</td><td>11</td><td>3</td><td>5</td><td>2</td></tr>
+        <tr><td>12</td><td>12</td><td>4</td><td>5</td><td>1</td></tr>
+        <tr><td>13</td><td>13</td><td>4</td><td>6</td><td>2</td></tr>
+        <tr><td>14</td><td>14</td><td>4</td><td>6</td><td>2</td></tr>
+        <tr><td>15</td><td>15</td><td>4</td><td>7</td><td>3</td></tr>
+        <tr><td>16</td><td>16</td><td>5</td><td>7</td><td>2</td></tr>
+        <tr><td>17</td><td>17</td><td>5</td><td>7</td><td>2</td></tr>
+        <tr><td>18</td><td>18</td><td>5</td><td>8</td><td>3</td></tr>
+        <tr><td>19</td><td>19</td><td>6</td><td>8</td><td>2</td></tr>
+        <tr><td>20</td><td>20</td><td>6</td><td>9</td><td>3</td></tr>
+        <tr><td>21</td><td>21</td><td>6</td><td>9</td><td>3</td></tr>
+        <tr><td>22</td><td>22</td><td>7</td><td>9</td><td>2</td></tr>
+    </tbody>
+    <caption><strong>Table:</strong> Attacker-Defender difference in n!:n! front in SR</caption>
+</table>
+
+<p>In WR you can have n!:n! eliminations more often, like <a href="https://www.warzone.com/MultiPlayer?GameID=41504555" target="_blank">here T1</a> and <a href="https://www.warzone.com/MultiPlayer?GameID=40648576" target="_blank">here T3</a>. Hell, imagine the 4vs4 scenario which is extremely common. In SR 4vs4, attack of 3 by attacker: 4vs4 → 1vs2 then defender taps into nothing and it drops to 1vs1. In WR the defender can eliminate back <strong>28%</strong> of the time. I'm not kidding, grab your probabilities handbook and follow along:</p>
+<ul>
+    <li>4v4, attack of 3, first event.</li>
+    <li>Attacker has 80% to kill 2, 20% to kill 1 defender.</li>
+    <li>Defender has 80% chance to kill 3 attackers, 20% chance to kill 2 attackers.</li>
+    <li>4 scenarios, joint probabilities of each:
+        <ol>
+            <li>64% to end up in a 1vs2 scenario (-3, -2).</li>
+            <li>16% to end up in a 2vs2 scenario (-2, -2).</li>
+            <li>16% to end up in a 1vs3 scenario (-3, -1).</li>
+            <li>4% to end up in a 2vs3 scenario (-2, -1).</li>
+        </ol>
+    </li>
+    <li>Breakdown:
+        <ol>
+            <li>In Scenario 1, defender attacks with 1 against 1. If the stars align, 18% of the time you recapture.</li>
+            <li>In Scenario 2, it's 0%.</li>
+            <li>In Scenario 3, defender attacks with 2 against 1. 100% of the time recapture.</li>
+            <li>In Scenario 4, defender attacks with 2 against 2. That's a 12% chance you recapture (20% your 2 attackers establish dominance killing 2 and 60% the 2 defenders just kill 1 attacker and allow you to spread your armies as stand-guard in the 2 territories).</li>
+        </ol>
+    </li>
+    <li>Overall chance to get eliminated in a 4vs4 front where both attack each other is <code>(0.64 × 0.18) + (0.16 × 1) + (0.16 × 0) + (0.04 × 0.12) = 0.28</code> or 28%.</li>
+</ul>
+
+<p>The issues are not limited to the 4vs4 scenario. I calculated manually the probabilities for 5vs5 and 7vs7, fed the algorithm to ChatGPT, verified those 2 and got back the numbers up to 20vs20 below. This aligns with everyone's opinion that in WR you should just build a stack before attacking as losses tend to minimize with bigger army stacks. In fact as you can see, at 20vs20 you cannot get eliminated:</p>
+<ul>
+    <li>3vs3: 14.40%</li>
+    <li>4vs4: 28.00%</li>
+    <li>5vs5: 37.20%</li>
+    <li>6vs6: 29.60%</li>
+    <li>7vs7: 35.28%</li>
+    <li>8vs8: 39.84%</li>
+    <li>9vs9: 30.80%</li>
+    <li>10vs10: 24.00%</li>
+    <li>11vs11: 28.00%</li>
+    <li>12vs12: 25.60%</li>
+    <li>13vs13: 8.80%</li>
+    <li>14vs14: 9.60%</li>
+    <li>15vs15: 18.00%</li>
+    <li>16vs16: 12.00%</li>
+    <li>17vs17: 7.20%</li>
+    <li>18vs18: 9.60%</li>
+    <li>19vs19: 9.60%</li>
+    <li>20vs20: 0%</li>
+</ul>
+
+<p>Statistically speaking:</p>
+<ol>
+    <li>Fronts 3–4 you usually survive, &lt;30% chance to get erased.</li>
+    <li>Fronts 5–11 are practically a coin-flip.</li>
+    <li>Fronts 12–19: things work in your favour; bigger stacks make it harder for defender B to counter back and have the army stand-guard to survive.</li>
+    <li>Above 20, a one-turn wipe is mostly impossible (6% at 22v22, 3% at 23v23, and 1% at 29v29).</li>
+    <li>You can legitimately get recaptured back if you attack in a 7vs6 scenario first as long as the position becomes 2vs3 (his 6 defenders kill 5 attackers 20% and your 6 attackers kill 3 defenders 40% → 8% scenario). From there, as long as they attack you back with 2, kill 2 (20%), and your 2 defenders kill only 1 (60%), they get to capture back (8% chance in this particular scenario). Overall chance: 0.64%.</li>
+</ol>
+
+<p>Actual tips for your gameplay:</p>
+<ol>
+    <li>Need to reduce variance? Multiples of 5 for attack, multiples of 10 for defense.</li>
+    <li>Need a chance to break? Add 1–2 armies and the 60%+ of rolls can give what you need, and 14 attackers might just kill 9 defenders 40% of the time (remember for attackers: modulo-4 is 40% to roll up, modulo-2 is 20%).</li>
+    <li>Small stacks 5–11: add +1 (if your opponent is at n go up to n+1; n can capture back vs n+1 only at 4vs3 and 7vs6), or just move second (out-delay), or just <strong>don't attack at all</strong>.</li>
+</ol>
+
+<p>The conclusion after this completely pointless, unnecessarily lengthy and fruitless explanation is that WR fits under <em>predictable variance</em>. You can compute the odds and decide based on that. Or you can completely veto the templates in the respective tables. WR comes with a couple of significant advantages over SR in that a) it will practically never result in a draw and b) it can (and often will) be harder to find an optional set of moves for your position (rarer so picks). You have to build an intuition on figuring out how to best use all your leftovers in coordination, as calculating is tedious. The enormous disadvantage comes at how sometimes lady luck determines the outcome of the game, and not you. You can play every single correct move, and still lose. But the moves themselves are less clear than SR's gameplay, especially in the 2025 landscape where players have long forgotten how to play WR and find joy mostly in SR.</p>
