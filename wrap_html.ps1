@@ -21,6 +21,7 @@ $headerTemplate = "<!DOCTYPE html>
             <option value='08SpecificTricks.html'>9. Specific Tricks</option>
             <option value='09WRIntroduction.html'>10. WR Introduction</option>
             <option value='10WRKillRates.html'>11. WR Kill Rates</option>
+            <option value='11Belarus.html'>12. Belarus</option>
         </select>
     </nav>
     <main>"
