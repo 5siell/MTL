@@ -7,8 +7,9 @@ body {
     padding: 20px;
 }
 
+/* Αυξάνουμε το max-width από 900px σε 1200px για να είναι πιο φαρδύ */
 main, section {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     background: #1e1e1e;
     padding: 40px;
@@ -72,9 +73,9 @@ figcaption {
     margin-top: 8px;
 }
 
-/* Navigation bar για τις επιμέρους σελίδες */
+/* Navigation bar - συμβαδίζει με το νέο πλάτος */
 .site-nav {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto 20px auto;
     display: flex;
     justify-content: space-between;
