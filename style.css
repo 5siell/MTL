@@ -1,35 +1,41 @@
 body {
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: Arial, sans-serif;
+    background-color: #0e1111;
+    color: #c9d1d9; /* Απαλό, ξεκούραστο υπόλευκο κείμενο */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
 }
 
-/* Αυξάνουμε το max-width από 900px σε 1200px για να είναι πιο φαρδύ */
 main, section {
     max-width: 1200px;
     margin: 0 auto;
-    background: #1e1e1e;
+    background: #161b1d;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
 h1, h2, h3, h4 {
     color: #ffffff;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #30363d;
     padding-bottom: 8px;
-    margin-top: 30px;
+    margin-top: 35px;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2em;
+    border-bottom: 2px solid #ffb100; /* Χρυσαφί πινελιά στον κύριο τίτλο */
 }
 
 a {
-    color: #58a6ff;
+    color: #ffb100; /* Wowhead gold/yellow για τα links */
     text-decoration: none;
 }
 
 a:hover {
+    color: #ffd700;
     text-decoration: underline;
 }
 
@@ -37,22 +43,22 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background-color: #252525;
+    background-color: #1a2124;
 }
 
 th, td {
-    border: 1px solid #444;
-    padding: 10px;
+    border: 1px solid #30363d;
+    padding: 12px;
     text-align: left;
 }
 
 th {
-    background-color: #333;
-    color: #fff;
+    background-color: #21262d;
+    color: #ffb100;
 }
 
 tr:nth-child(even) {
-    background-color: #2a2a2a;
+    background-color: #161b1d;
 }
 
 figure {
@@ -64,44 +70,52 @@ figure img {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
-    border: 1px solid #444;
+    border: 1px solid #30363d;
 }
 
 figcaption {
-    color: #888;
+    color: #8b949e;
     font-size: 0.9em;
     margin-top: 8px;
 }
 
-/* Navigation bar - συμβαδίζει με το νέο πλάτος */
+/* Navigation bar */
 .site-nav {
     max-width: 1200px;
     margin: 0 auto 20px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1e1e1e;
-    padding: 10px 20px;
-    border-radius: 8px;
+    background: #161b1d;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
 .home-btn {
     font-weight: bold;
-    color: #fff;
-    background: #333;
-    padding: 6px 12px;
+    color: #c9d1d9;
+    background: #21262d;
+    padding: 6px 14px;
     border-radius: 4px;
+    border: 1px solid #30363d;
 }
 
 .home-btn:hover {
-    background: #444;
+    background: #30363d;
+    color: #ffb100;
     text-decoration: none;
 }
 
 select {
-    background: #2b2b2b;
-    color: #fff;
-    border: 1px solid #444;
-    padding: 6px;
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 8px 12px;
     border-radius: 4px;
+    outline: none;
+}
+
+select:hover {
+    border-color: #ffb100;
 }
