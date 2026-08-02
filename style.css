@@ -42,23 +42,32 @@ a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    background-color: #1a2124;
+    margin: 25px 0;
+    background-color: #21262d; /* Πιο ανοιχτό σκούρο φόντο για να ξεχωρίζει */
+    color: #e6edfd; /* Πιο φωτεινό, ευανάγνωστο κείμενο */
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 th, td {
-    border: 1px solid #30363d;
-    padding: 12px;
+    border: 1px solid #363d44; /* Απαλό, καθαρό περίγραμμα */
+    padding: 12px 16px;
     text-align: left;
+    vertical-align: top;
 }
-
 th {
-    background-color: #21262d;
-    color: #ffb100;
+    background-color: #30363d; /* Πιο φωτεινό header για τα titles */
+    color: #ffb100; /* Το χρυσαφί του Wowhead */
+    font-weight: 600;
 }
 
 tr:nth-child(even) {
-    background-color: #161b1d;
+    background-color: #1a2026;
+}
+
+tr:hover {
+    background-color: #262d35; /* Μικρό εφέ φωτισμού όταν περνάει το ποντίκι */
 }
 
 figure {
