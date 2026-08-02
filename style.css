@@ -119,3 +119,13 @@ select {
 select:hover {
     border-color: #ffb100;
 }
+
+main table {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 20px auto !important;
+    table-layout: auto;
+}
+main td, main th {
+    padding: 10px 14px !important;
+}
