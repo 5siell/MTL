@@ -290,3 +290,9 @@ main section {
 main, .site-nav {
     box-sizing: border-box;
 }
+
+/* Placeholder for sections that haven't been written yet */
+.todo {
+    color: #6e7681;
+    font-style: italic;
+}
