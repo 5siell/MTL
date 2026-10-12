@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Turn Phases - MTL Strategy Guide</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <nav class='site-nav'>
+        <a href='index.html' class='home-btn'>Home / TOC</a>
+        <select onchange='if(this.value) window.location.href=this.value'>
+            <option value=''>-- Jump to Chapter --</option>
+            <optgroup label="General Information">
+                <option value="00Abstract.html">Abstract</option>
+                <option value="01Introduction.html">Introduction</option>
+                <option value="02UsefulLinks.html">Useful Links</option>
+                <option value="03GeneralThings.html">General Things regarding the MTL</option>
+                <option value="04MoveOrder.html">Move Order</option>
+                <option value="04PickingPhase.html">Picking Phase</option>
+                <option value="04TurnPhases.html">Turn Phases</option>
+                <option value="05GeneralGameplay.html">General Gameplay</option>
+                <option value="06Rounding.html">Rounding</option>
+                <option value="07CardSettings.html">Card Settings</option>
+                <option value="08SpecificTricks.html">Specific Tricks</option>
+            </optgroup>
+            <optgroup label="Weighted Random">
+                <option value="09WRIntroduction.html">WR Introduction</option>
+                <option value="10WRKillRates.html">WR Kill Rates</option>
+                <option value="11Belarus.html">Belarus</option>
+                <option value="12GreatLakes.html">Great Lakes</option>
+                <option value="13BritishRaj.html">British Raj</option>
+                <option value="14RandomisedStratME.html">Randomised Strat ME</option>
+                <option value="15StratME.html">Strat ME</option>
+                <option value="16Phobia.html">Phobia</option>
+                <option value="17FinalFantasyVII.html">Final Fantasy VII</option>
+                <option value="18Tor-ture.html">Tor-ture</option>
+                <option value="19StrategicCommanders.html">Strategic Commanders</option>
+                <option value="20PangeaUltima.html">Pangea Ultima</option>
+            </optgroup>
+            <optgroup label="Niche">
+                <option value="31FrenchBrawl.html">French Brawl</option>
+                <option value="32YorkshireBrawl.html">Yorkshire Brawl</option>
+                <option value="33.Guiroma.html">Guiroma</option>
+                <option value="34BfME.html">Battle for Middle Earth</option>
+                <option value="41_7550KillRates.html">75/50 Kill Rates</option>
+                <option value="42_TimidLands.html">Timid Lands</option>
+                <option value="43_FastEarth.html">Fast Earth</option>
+            </optgroup>
+            <optgroup label="Local Deployment">
+                <option value="51_Local Deployment.html">Local Deployment</option>
+                <option value="52_TurkeyLD.html">Turkey LD</option>
+                <option value="53_GreeceLD.html">Greece LD</option>
+                <option value="54_SuccessionWars.html">Succession Wars</option>
+            </optgroup>
+            <optgroup label="Army Cap and Multi Attack">
+                <option value="55ArmyCap.html">Army Cap</option>
+                <option value="56GeorgiaAC.html">Georgia Army Cap</option>
+                <option value="58Multi-Attack.html">Multi Attack</option>
+                <option value="59Bork.html">Bork</option>
+                <option value="60MALD.html">MALD - MME multi attack local deployment</option>
+                <option value="61BIVMA.html">Battle Islands IV multi attack</option>
+            </optgroup>
+            <optgroup label="Not so vanilla">
+                <option value="62IslandOfRuins.html">Island of Ruins</option>
+                <option value="63LampuriaSwap.html">Lampuria Swap</option>
+                <option value="64MacedoniaNoSplit.html">Macedonia No Split</option>
+                <option value="65Landria.html">Landria</option>
+                <option value="66Earthsea.html">Earthsea</option>
+                <option value="67Tarabonia&#x27;s Choice.html">Tarabonia's Choice</option>
+            </optgroup>
+            <optgroup label="INSS">
+                <option value="68_INSS.html">INSS</option>
+                <option value="69_ElitistAfrica.html">Elitist Africa</option>
+                <option value="70_BiomesOfAmerica.html">Biomes of America</option>
+                <option value="71_AseridithIslands.html">Aseridith Islands</option>
+            </optgroup>
+            <optgroup label="Vanilla - 5 armies per initial territory">
+                <option value="72__StratGreece.html">Strategic Greece</option>
+            </optgroup>
+            <optgroup label="Vanilla - 4 armies per initial territory - 4 spawns - 5 income">
+                <option value="73__BlackSea.html">Black Sea</option>
+                <option value="74__Malvia.html">Malvia</option>
+                <option value="75__VolcanoIsland.html">Volcano Island</option>
+                <option value="76__WorldofWarhammer.html">World of Warhammer</option>
+            </optgroup>
+            <optgroup label="Vanilla - 4 armies per initial territory - 3 spawns - 5 income">
+                <option value="77__Post-meltAntarctica.html">Post-melt Antarctica</option>
+                <option value="78__Basileia.html">Basileia</option>
+                <option value="79__BIV.html">BIV</option>
+                <option value="80__StratMME.html">Strat MME - Strategic 1vs1</option>
+            </optgroup>
+            <optgroup label="Vanilla - 4 armies per initial territory - 4 income">
+                <option value="81__Laketown.html">Laketown</option>
+                <option value="82__SaudiArabia.html">Saudi Arabia</option>
+                <option value="83__TreasureMap.html">Treasure Map</option>
+            </optgroup>
+            <optgroup label="Vanilla - 3 armies per initial territory - 5 income">
+                <option value="84__UnicornIsland.html">Unicorn Island</option>
+            </optgroup>
+            <optgroup label="Vanilla - 3 armies per initial territory - 4 income">
+                <option value="85__Discovery.html">Discovery</option>
+                <option value="86__GMEIII.html">GME III</option>
+                <option value="87__Hannibal.html">Hannibal at the Gates</option>
+            </optgroup>
+            <optgroup label="Vanilla - 3 armies per initial territory - 3 income">
+                <option value="89__Numenor.html">Numenor</option>
+                <option value="88__Australia.html">Australia</option>
+            </optgroup>
+            <optgroup label="Vanilla - 2 armies per initial territory">
+                <option value="90__SlowBurn.html">Slow Burn</option>
+            </optgroup>
+            <optgroup label="Luck">
+                <option value="91How_Luck_Works.html">How Luck Works</option>
+                <option value="92CalculatingLuck.html">Calculating Luck</option>
+            </optgroup>
+        </select>
+    </nav>
+    <main>
+<section id="turn-phases">
+    <h1>Turn Phases</h1>
+
+    <p>In reference to <a href="https://www.warzone.com/wiki/Turn_phases" target="_blank">Wikipedia on Turn phases</a>, understanding this is vital to a lot of tricks as well as strategy in general. There are distinct phases where each action takes place, with those being the below. These turn phases are absolute, they are applied 24/7, unless there is a Mod in the game bypassing a mechanic. The list is taken from the Wikipedia, but isn't entirely correct with some details like the diplomacy card wearing off after receiving new cards.</p>
+
+    <ol>
+        <li>
+            <ol type="a">
+                <li>Active Cards wear off</li>
+                <li>Discards</li>
+            </ol>
+        </li>
+        <li>
+            <ol type="a">
+                <li>Order Priority Cards</li>
+                <li>Spy-like Cards</li>
+                <li>Reinforcement Cards</li>
+            </ol>
+        </li>
+        <li>Deploy / Purchase</li>
+        <li>
+            <ol type="a">
+                <li>Bomb Cards</li>
+                <li>Emergency Blockade</li>
+                <li>Airlift Cards</li>
+                <li>Gift Cards</li>
+            </ol>
+        </li>
+        <li>Attacks/Transfers and Order Delay Cards</li>
+        <li>Blockade</li>
+        <li>Sanction Cards</li>
+        <li>Receive new cards</li>
+    </ol>
+
+    <p>The move order isn't applied in all of the Turn Phases, albeit it is in some:</p>
+    <ol>
+        <li>Active Cards wear off</li>
+        <li>Discards</li>
+        <li>Order Priority Cards</li>
+        <li>Spy-like Cards</li>
+        <li>Reinforcement Cards: They are executed in the same order as the turn. <a href="https://www.warzone.com/MultiPlayer?GameID=40211798" target="_blank">For example, Turn 9</a>.</li>
+        <li>Deploy / Purchase: They are executed in the same order as the turn.</li>
+        <li>Bomb Cards: clueless</li>
+        <li>Emergency Blockade: They are executed in the same order as the turn. <a href="https://www.warzone.com/MultiPlayer?GameID=37399642" target="_blank">For example, turns 15, 19, 44</a>.</li>
+        <li>Airlift Cards: clueless and haven't bothered to check.</li>
+        <li>Gift Cards: They are executed in the same order as the turn. <a href="https://www.warzone.com/MultiPlayer?GameID=40266635" target="_blank">For Example</a>.</li>
+        <li>Attacks/Transfers and Order Delay Cards</li>
+        <li>Blockade: They are executed in the same order as the turn. <a href="https://www.warzone.com/MultiPlayer?GameID=26656413" target="_blank">For Example, Turn 20</a>.</li>
+        <li>Sanction Cards: They are executed in the same order as the turn. <a href="https://www.warzone.com/MultiPlayer?GameID=34305927" target="_blank">For Example, Turn 5</a>.</li>
+        <li>Receive new cards: One of the players is selected (no idea as to the rule) and that player is always first in that list. <a href="https://www.warzone.com/MultiPlayer?GameID=33173841" target="_blank">For example</a>. Therefore, this cannot be used to either derive the move order, or gain any advantage.</li>
+    </ol>
+
+    <p>There are a handful of small things one can note of, but most of them are extremely case-specific. As an example, in Georgia Army Cap and Landria the players have an abundance of Blockades. It's always recommended to first blockade territories bordering your opponent so as to avoid passing information on how many territories you blockaded or how many cards you used.</p>
+
+    <h2>Order Delay and Phases</h2>
+
+    <p>So the first mention of this that I found dates back to <a href="https://www.warzone.com/Forum/152388-move-order?Offset=0" target="_blank">2016</a>. But before we jump deep into this, let's first understand the way OD functions with this <a href="https://www.warzone.com/MultiPlayer?GameID=38665549" target="_blank">Game, and Turns 10, 17</a> shown below.</p>
+
+    <div style="display: flex; justify-content: space-between; margin: 20px 0;">
+        <figure style="width: 48%; text-align: center; margin: 0;">
+            <img src="Images/od1.jpg" alt="Turn 10" style="width: 100%; height: auto; max-height: 500px; object-fit: contain;">
+            <figcaption style="font-size: 0.9em; color: #555;">Turn 10</figcaption>
+        </figure>
+        <figure style="width: 48%; text-align: center; margin: 0;">
+            <img src="Images/od2.jpg" alt="Turn 17" style="width: 100%; height: auto; max-height: 500px; object-fit: contain;">
+            <figcaption style="font-size: 0.9em; color: #555;">Turn 17</figcaption>
+        </figure>
+    </div>
+
+    <p>Playing an OD card effectively creates a new phase for orders to execute in. Playing a set of OD cards at the same time, or more, pushes moves to a second, or latter phase, respectively. But you can queue moves between each OD phase. The arising question is what happens with the move order, as in the above 2016 forum, quoting this <a href="https://www.warzone.com/multiplayer?GameID=11157247" target="_blank">game</a>, turn 7 doesn't seem to make any sense. Fizzer's response to it <a href="https://www.warzone.com/Forum/152388-move-order?Offset=20" target="_blank">was</a>:</p>
+
+    <ol>
+        <li>Consider all players with unprocessed orders. Is the top order for everyone an OD?
+            <ul>
+                <li>If so, process one OD from everyone.</li>
+            </ul>
+        </li>
+        <li>Process top order from each player whose top order is not an order delay card.</li>
+        <li>Reverse the move order</li>
+        <li>If there are still unprocessed orders, go to 1</li>
+    </ol>
+
+    <p>So to explain it further, in that game on Turn 7, first move belongs to Sultan. After deployments, the above algorithm is implemented:</p>
+
+    <ol>
+        <li>1. Is skipped since not both players have OD first</li>
+        <li>2. Njord's first move is played</li>
+        <li>3. Move order is reversed, meaning next move will belong to njord, followed by 2x from sultan, etc.</li>
+        <li>4. If there were unprocessed orders this algorithm repeats. Here there aren't. The set of ODs is played.</li>
+    </ol>
+
+    <p>Practically speaking, this algorithm implies that moves in this game are coded as AB pairs and not ABBA pairs, with the order flipped after each pair. If A has a move while B doesn't then the order will still be flipped if the turn has more actions later on during an OD. Now I will use the same simple matrix used in <a href="https://www.warzone.com/Forum/694458-new-trick-solarflare" target="_blank">Gak's and Solar's trick</a> to define a set of ODs as well as the actions before, in between and after those.</p>
+
+    <figure style="float: right; margin: 0 0 15px 20px; text-align: center; max-width: 250px;">
+        <img src="Images/odtrick.jpg" alt="OD phases" style="width: 100%; height: auto;">
+        <figcaption style="font-size: 0.9em; color: #555;">OD phases</figcaption>
+    </figure>
+
+    <p>Applying the same algorithm on <a href="https://www.warzone.com/MultiPlayer?GameID=40150939" target="_blank">Turn 19</a> as well as <a href="https://www.warzone.com/MultiPlayer?GameID=26880828" target="_blank">Turn 19</a> proves that in the before ODs phase:</p>
+    <ul>
+        <li>Playing a single move results in the move order always getting flipped. So, <a href="https://www.warzone.com/MultiPlayer?GameID=40150939" target="_blank">here</a>, on Turn 19 Krzysztof has first move, has 1 order in the before OD phase. Move order then is reversed to 1. nickpugs 2. Krzysztof. Set of ODs is played, followed by 1 move from nickpugs, 2 from Krzysztof and so on.</li>
+        <li>If there are no moves played, the move order is not flipped <a href="https://www.warzone.com/MultiPlayer?GameID=33954581" target="_blank">Turn 1</a>.</li>
+        <li>If there are 2 moves played, the move order is flipped twice, practically speaking going back to the original one, like <a href="https://www.warzone.com/MultiPlayer?GameID=26880828" target="_blank">Turn 19</a>.</li>
+        <li>3 onward you get the memo.</li>
+    </ul>
+
+    <p>When 2 sets of ODs are played like in <a href="https://www.warzone.com/MultiPlayer?GameID=33173841" target="_blank">Turn 37</a>, the algorithm is still run as above. Specifically:</p>
+    <ol>
+        <li>1. Yes the top order from both is an OD -&gt; 1st set of ODs is played</li>
+        <li>2. No order found in this setup to process</li>
+        <li>3. Move order is reversed. Now Crazy has first move.</li>
+        <li>4. There are still unprocessed orders so back to 1.</li>
+        <li>1. The second set of ODs is played.</li>
+        <li>2. Crazy's first move is played. Move Order reversed, no more ODs, proceed into 2x Gak etc</li>
+    </ol>
+
+    <p>The trick behind these, is that the game treats 0-moves in the same way it treats every other order, as it doesn't know the orders will fail. Therefore, you can use a failed 0-move like in <a href="https://www.warzone.com/MultiPlayer?GameID=37574317" target="_blank">Turn 7</a> to make sure the cycle after the set of ODs favors you (Rufus playing 2 moves before the set of ODs makes it that the order is not flipped and he has first move after the set of ODs, especially since Rufus plays an OP himself). You can scout for more scenarios in Solar's games <a href="https://www.warzone.com/MultiPlayer?GameID=33965256" target="_blank">1</a> and <a href="https://www.warzone.com/MultiPlayer?GameID=33954581" target="_blank">2</a>.</p>
+
+</section>
+    </main>
+</body>
+</html>

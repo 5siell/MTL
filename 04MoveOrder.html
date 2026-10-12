@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Move Order - MTL Strategy Guide</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <nav class='site-nav'>
+        <a href='index.html' class='home-btn'>Home / TOC</a>
+        <select onchange='if(this.value) window.location.href=this.value'>
+            <option value=''>-- Jump to Chapter --</option>
+            <optgroup label="General Information">
+                <option value="00Abstract.html">Abstract</option>
+                <option value="01Introduction.html">Introduction</option>
+                <option value="02UsefulLinks.html">Useful Links</option>
+                <option value="03GeneralThings.html">General Things regarding the MTL</option>
+                <option value="04MoveOrder.html">Move Order</option>
+                <option value="04PickingPhase.html">Picking Phase</option>
+                <option value="04TurnPhases.html">Turn Phases</option>
+                <option value="05GeneralGameplay.html">General Gameplay</option>
+                <option value="06Rounding.html">Rounding</option>
+                <option value="07CardSettings.html">Card Settings</option>
+                <option value="08SpecificTricks.html">Specific Tricks</option>
+            </optgroup>
+            <optgroup label="Weighted Random">
+                <option value="09WRIntroduction.html">WR Introduction</option>
+                <option value="10WRKillRates.html">WR Kill Rates</option>
+                <option value="11Belarus.html">Belarus</option>
+                <option value="12GreatLakes.html">Great Lakes</option>
+                <option value="13BritishRaj.html">British Raj</option>
+                <option value="14RandomisedStratME.html">Randomised Strat ME</option>
+                <option value="15StratME.html">Strat ME</option>
+                <option value="16Phobia.html">Phobia</option>
+                <option value="17FinalFantasyVII.html">Final Fantasy VII</option>
+                <option value="18Tor-ture.html">Tor-ture</option>
+                <option value="19StrategicCommanders.html">Strategic Commanders</option>
+                <option value="20PangeaUltima.html">Pangea Ultima</option>
+            </optgroup>
+            <optgroup label="Niche">
+                <option value="31FrenchBrawl.html">French Brawl</option>
+                <option value="32YorkshireBrawl.html">Yorkshire Brawl</option>
+                <option value="33.Guiroma.html">Guiroma</option>
+                <option value="34BfME.html">Battle for Middle Earth</option>
+                <option value="41_7550KillRates.html">75/50 Kill Rates</option>
+                <option value="42_TimidLands.html">Timid Lands</option>
+                <option value="43_FastEarth.html">Fast Earth</option>
+            </optgroup>
+            <optgroup label="Local Deployment">
+                <option value="51_Local Deployment.html">Local Deployment</option>
+                <option value="52_TurkeyLD.html">Turkey LD</option>
+                <option value="53_GreeceLD.html">Greece LD</option>
+                <option value="54_SuccessionWars.html">Succession Wars</option>
+            </optgroup>
+            <optgroup label="Army Cap and Multi Attack">
+                <option value="55ArmyCap.html">Army Cap</option>
+                <option value="56GeorgiaAC.html">Georgia Army Cap</option>
+                <option value="58Multi-Attack.html">Multi Attack</option>
+                <option value="59Bork.html">Bork</option>
+                <option value="60MALD.html">MALD - MME multi attack local deployment</option>
+                <option value="61BIVMA.html">Battle Islands IV multi attack</option>
+            </optgroup>
+            <optgroup label="Not so vanilla">
+                <option value="62IslandOfRuins.html">Island of Ruins</option>
+                <option value="63LampuriaSwap.html">Lampuria Swap</option>
+                <option value="64MacedoniaNoSplit.html">Macedonia No Split</option>
+                <option value="65Landria.html">Landria</option>
+                <option value="66Earthsea.html">Earthsea</option>
+                <option value="67Tarabonia&#x27;s Choice.html">Tarabonia's Choice</option>
+            </optgroup>
+            <optgroup label="INSS">
+                <option value="68_INSS.html">INSS</option>
+                <option value="69_ElitistAfrica.html">Elitist Africa</option>
+                <option value="70_BiomesOfAmerica.html">Biomes of America</option>
+                <option value="71_AseridithIslands.html">Aseridith Islands</option>
+            </optgroup>
+            <optgroup label="Vanilla - 5 armies per initial territory">
+                <option value="72__StratGreece.html">Strategic Greece</option>
+            </optgroup>
+            <optgroup label="Vanilla - 4 armies per initial territory - 4 spawns - 5 income">
+                <option value="73__BlackSea.html">Black Sea</option>
+                <option value="74__Malvia.html">Malvia</option>
+                <option value="75__VolcanoIsland.html">Volcano Island</option>
+                <option value="76__WorldofWarhammer.html">World of Warhammer</option>
+            </optgroup>
+            <optgroup label="Vanilla - 4 armies per initial territory - 3 spawns - 5 income">
+                <option value="77__Post-meltAntarctica.html">Post-melt Antarctica</option>
+                <option value="78__Basileia.html">Basileia</option>
+                <option value="79__BIV.html">BIV</option>
+                <option value="80__StratMME.html">Strat MME - Strategic 1vs1</option>
+            </optgroup>
+            <optgroup label="Vanilla - 4 armies per initial territory - 4 income">
+                <option value="81__Laketown.html">Laketown</option>
+                <option value="82__SaudiArabia.html">Saudi Arabia</option>
+                <option value="83__TreasureMap.html">Treasure Map</option>
+            </optgroup>
+            <optgroup label="Vanilla - 3 armies per initial territory - 5 income">
+                <option value="84__UnicornIsland.html">Unicorn Island</option>
+            </optgroup>
+            <optgroup label="Vanilla - 3 armies per initial territory - 4 income">
+                <option value="85__Discovery.html">Discovery</option>
+                <option value="86__GMEIII.html">GME III</option>
+                <option value="87__Hannibal.html">Hannibal at the Gates</option>
+            </optgroup>
+            <optgroup label="Vanilla - 3 armies per initial territory - 3 income">
+                <option value="89__Numenor.html">Numenor</option>
+                <option value="88__Australia.html">Australia</option>
+            </optgroup>
+            <optgroup label="Vanilla - 2 armies per initial territory">
+                <option value="90__SlowBurn.html">Slow Burn</option>
+            </optgroup>
+            <optgroup label="Luck">
+                <option value="91How_Luck_Works.html">How Luck Works</option>
+                <option value="92CalculatingLuck.html">Calculating Luck</option>
+            </optgroup>
+        </select>
+    </nav>
+    <main>
+<section id="move-order">
+    <h1>Move Order</h1>
+
+    <h2>Explanation of Move Order - ABBA</h2>
+
+    <figure>
+        <img src="Images/moveorder.jpg" alt="ABBA applied">
+        <figcaption>ABBA applied</figcaption>
+    </figure>
+
+    <p>In accordance with <a href="https://www.warzone.com/wiki/Move_Order" target="_blank">Warzone Wiki Move Order Explanation</a>, in a Warzone 1vs1 game between player A and player B, and under the assumption that player A has the first move, the move order alternates as ABBAABBAA&hellip;. This sequence can be described as follows:</p>
+
+    <ul>
+        <li>Player A executes their 1<sup>st</sup> move.</li>
+        <li>Player B executes their 1<sup>st</sup> and 2<sup>nd</sup> moves consecutively.</li>
+        <li>Player A executes their 2<sup>nd</sup> and 3<sup>rd</sup> moves consecutively.</li>
+        <li>Player B executes their 3<sup>rd</sup> and 4<sup>th</sup> moves consecutively.</li>
+        <li>Player A executes their 4<sup>th</sup> and 5<sup>th</sup> moves consecutively.</li>
+        <li>Player B executes their 5<sup>th</sup> and 6<sup>th</sup> moves consecutively.</li>
+        <li>And so on, following the ABBA pattern, with an example at Figure ABBA_image.</li>
+    </ul>
+
+    <p>This pattern ensures that player A and player B alternate moves, with each player receiving consecutive moves in pairs after the first move by player A. The sequence ABBA then continues cyclically.</p>
+
+    <p>Of course, in the opposite case that player B has first move, then the move order follows the inverse pattern BAABBAABB &hellip;. The ABBA algorithm determines not only the order of moves but also the order of deployments, without exception. The arising question regarding the above rule, how is it decided which player moves first each turn. The answer to that question relies on the 3 different settings of implementation one can find upon creating a game. Needless to say, each game follows exactly 1 of the settings below:</p>
+    
+    <ol>
+        <li>Random Move Order</li>
+        <li>Cyclic Move Order</li>
+        <li>No-Luck Cycle Move Order</li>
+    </ol>
+
+    <h2>Move Order Settings</h2>
+
+    <h3>Random Move Order</h3>
+    
+    <p>When a game is configured to Random Move Order, Warzone will randomize the move order on each turn. Very straight forward, no way to predict whether you have first move or not, it's a 50-50 chance. The ABBA pattern applies always.</p>
+
+    <p>When Warzone was first released, it resembled a lot Risk's settings of luck with dice rolls. Now I am not certain of this, but the game used to have only RMO for some years, with Fizzer pushing for a more strategic, less luck-heavy meta later on, which included cyclic and nlc. Older templates have RMO de facto. That has been the subject of discussion, with a lot of templates throughout time altered by the community from RMO to a periodic and predictable setting.</p>
+
+    <h3>Cyclic Move Order</h3>
+
+    <p>Suppose the picking phase of a Warzone's game is Turn 0, basically the only Turn happening prior to Turn 1, with the purpose of allocating territories to the 2 players based on their pick choices (assuming of course some manual distribution of territories). The first turn of the game (Turn 0), is randomised, just as it would be in the Random Move Order presented above, but subsequent turns reverse the order each time.</p>
+
+    <p>In an example of an 1vs1 game between player A and B, the dice is rolled during picking phase and let's assume for the sake of the example player A has 1st pick. Then player B gets 2 picks, then A gets 2 picks, and so on till both players exhaust the number of initial territories the corresponding template offers them. To sum it up, in Cyclic Move Order, and if player A had 1st pick, then:</p>
+    
+    <ul>
+        <li>Every even Turn (Turn 2, 4, 6 etc) will involve the patter ABBAABB &hellip; meaning A has first move.</li>
+        <li>Every odd Turn (Turn 1, 3, 5 etc) will involve the pattern BAABBAA &hellip; meaning B has first move.</li>
+    </ul>
+
+    <p>What this implies is that move order is predictable. As long as you are able to perceive the move order once, you know who has first move each turn in the future and in the past.</p>
+
+    <h3>No-Luck Cycle Move Order</h3>
+
+    <p>No-Luck Cycle Move Order is the same as Cyclic, except that it aims to remove the random effect of the random roll on the first turn of who plays first. The initial order of the cycle is determined by how fast each player plays during their first turn. Under the assumption the game involves a manual distribution setting, the first turn is the picking phase, alternatively it's the first turn of the game. Whoever plays (and commits) faster, will be placed first in the move order.</p>
+
+    <p>Basically, whoever picks fastest can guarantee they will get their first pick of choice.</p>
+
+    <h3>Discussion</h3>
+
+    <p>If you study or at least come across games from the 2010s you'll quickly see that all templates featured RMO. The introduction of cyclic and NLC started as an attempt at reducing the luck factor in games. However this is a very controversial topic of discussion. NLC degrades</p>
+
+    
+    
+
+    <h2>Move Order in Team Games</h2>
+
+    <h3>2vs2</h3>
+
+    <p>Team Games (2vs2s and 3vs3s) tend to have cyclic move order. Expanding on this, the order follows the same ABBA pattern. In a 2vs2 game between Team A (players A1 and A2) and Team B (players B1 and B2), the move order would follow the pattern <code>A1,B1,B2,A2 ,A2,B2,B1,A1 , A1,B1,B2,A2 &hellip;</code></p>
+
+    <p>This is best illustrated in the Figure moveorder_2v2s. Also remember that the ABBA pattern follows both the moves - orders and the deployments.</p>
+
+    <figure>
+        <img src="Images/moveorder2v2.jpg" alt="Move Order in 2vs2 games">
+        <figcaption>Move Order in 2vs2 games</figcaption>
+    </figure>
+
+    <p>For example, in this <a href="[https://www.warzone.com/MultiPlayer?GameID=37917076](https://www.warzone.com/MultiPlayer?GameID=37917076)" target="_blank">Strategic 2vs2</a> game when checking the history from everyone's POV as well as my POV after Turn 1 we see Figure ex1 and ex2.</p>
+
+    <figure>
+        <div style="display: flex; gap: 10px; justify-content: center;">
+            <div style="flex: 1;">
+                <img src="Images/ex1.jpg" alt="Full POV" style="width: 100%; height: auto;">
+                <figcaption>Full POV</figcaption>
+            </div>
+            <div style="flex: 1;">
+                <img src="Images/ex2.jpg" alt="My Perspective" style="width: 100%; height: auto;">
+                <figcaption>My Perspective</figcaption>
+            </div>
+        </div>
+    </figure>
+
+    <p>After Turn 1 me and my teammate should be able to figure out the move order within seconds. Upon seeing history, it's straight forward that on Turn 1 the order is Ralph->7ate9, with Xeno making an attack visible to us in between 7ate9's 1st and 2nd move. If Xeno and Jack were team B, then the moves we see in history are impossible to take place, considering the move order would be A1->B1->B2->A2->A2, implying that A2, in this case 7ate9, would have 2 consecutive moves (Figure 2v2deriving). As a result, Xeno/Jack are team A, and the move order is revealed to be:</p>
+
+    <ul>
+        <li>Odd Turns: 1.Jack, 2/3 Ralph, 7ate9, 4. Xeno</li>
+        <li>Even Turns (and picks): 1. Xeno 2/3 7ate9, Ralph, 4. Jack</li>
+    </ul>
+
+    <figure>
+        <img src="Images/2v2figuring.jpg" alt="Deriving move order">
+        <figcaption>Deriving move order</figcaption>
+    </figure>
+
+    <p>Following the same <a href="[https://www.warzone.com/MultiPlayer?GameID=37917076](https://www.warzone.com/MultiPlayer?GameID=37917076)" target="_blank">Strategic 2vs2</a> game, after figuring the Move Order, the next step is utilizing that so as to get any information possible for the opponent spawns as well as expansion and leftover armies.</p>
+
+    <h3>3vs3</h3>
+
+    <p>Similarly to 2vs2 games, 3vs3 also tend to have cyclic move order. Expanding on this, the order follows the same ABBA pattern. In a 3vs3 game between Team A (players A1, A2 and A3) and Team B (players B1, B2 and B3), the move order would follow the pattern <code>A1,B1,B2,A2,A3,B3 ,B3,A3,A2,B2,B1,A1 , A1,B1,B2,A2,A3,B3 &hellip;</code></p>
+
+    <p>This is best illustrated in the Figure 3vs3. Also remember that the ABBA pattern follows both the moves - orders and the deployments.</p>
+
+    <figure>
+        <img src="Images/3vs3.jpg" alt="ABBA in moves in 3vs3">
+        <figcaption>ABBA in moves in 3vs3</figcaption>
+    </figure>
+
+    <h2>Order of Deployment</h2>
+
+    <p>Best explained with an example <a href="https://www.warzone.com/MultiPlayer?GameID=36719132" target="_blank">Chris vs Ragnar, MTL</a>. I received my first 3 picks. End of turn 3 I meet up an opponent an a very suspicious place. Look at the game from my POV turn 4, specifically the deployments that took place.</p>
+
+    <figure style="float: right; margin: 0 0 15px 20px; text-align: center; max-width: 250px;">
+        <img src="Images/order_deployments.jpg" alt="History from my POV" style="width: 100%; height: auto;">
+        <figcaption style="font-size: 0.9em; color: #555;">History from my POV</figcaption>
+    </figure>
+
+    <p>I deploy 3 times and then I see my opponent's deployment of 8 armies. I can derive from his capture of 4 armies that on that specific turn, I had 1st move. Deployments also follow move order. That means Ragnar deployed in 2 places or more before deploying on the border vs me. Get into the habit of hiding your position and income. If your opponent is repeatedly making this again and again and again, use that information against them.</p>
+
+    <p>Another example is <a href="https://www.warzone.com/MultiPlayer?GameID=36233122" target="_blank">Chris vs Gincompetent, 1vs1 Ladder</a>, Turn 4. I know from the attacks that have taken place, that I have first move on turn 4. And my opponent deploys elsewhere twice, then on me. + I see all his delays. After such a turn you should be able to understand exactly where you opponent is. Invest those 3 minutes to understand the position and find the winning moves.</p>
+
+    <h2>Figuring the Move Order based on pick outcome</h2>
+
+    <p>On guessing with some certainty the move order from the pick outcome in non-light fog templates. examples from inss, or templates with a lot of picks, where you can be somewhat certain what the move order is based on the picks. Not 100% but somewhat certain.</p>
+
+    <p>For example in this <a href="https://www.warzone.com/MultiPlayer?GameID=40500155" target="_blank">Earthsea</a> game (my picks are pretty bad, don't use this as a guideline for how to pick on the template), I receive 1/2/4/7/8 and lose 3/5/6 as well 10. The issue after the territory allocation is that without information on the move order, I cannot make sound moves as me and Guest are contesting two red +1 castles.</p>
+
+    <figure style="text-align: center; margin: 20px 0;">
+        <img src="Images/earthsea.jpg" alt="My picks" style="max-width: 70%; height: auto;">
+        <figcaption style="font-size: 0.9em; color: #555;">My picks. Red circle what I received. Light Blue circle what I lost and what I have vision on.</figcaption>
+    </figure>
+
+    <p>But let's assume that I was first pick, meaning Guest moves first on turn 1. Then the allocation would have to look as shown below which logically speaking doesn't make sense from any possible perspective. With the numbers below identifying the territories as I picked them:</p>
+
+    <ul>
+        <li>If Guest decided to include all the territories that border the +1s, or 3/4 of those, in his first 4 picks, it is impossible for me get 3/4 as first pick. It would have to be 7ate9: 1, Guest: 2,3, 7ate9: 4,5 etc but I received 1,2,4.</li>
+        <li>If Guest decided to do picks in order of 1-&gt;2-&gt;3-&gt;5 prioritising the central +1 followed by the ftb I picked at 2/3/5, or did his first three picks on my 2/3/5, it again doesn't make sense.</li>
+    </ul>
+
+    <p>It is useful in your own games to try and apply trial and error into thinking what was your opponents idea in picks so as to derive how they will act upon the distribution they received, as well as the move order. In this game, while I am not certain of the move order, I am fairly confident I was second pick and choose to play my moves under that assumption.</p>
+
+    <figure style="text-align: center; margin: 20px 0;">
+        <img src="Images/earhsea_oucome.jpg" alt="For move order" style="max-width: 70%; height: auto;">
+        <figcaption style="font-size: 0.9em; color: #555;">For move order: 1. 7ate9, 2. Guest on picks</figcaption>
+    </figure>    
+
+</section>
+    </main>
+</body>
+</html>

@@ -14,7 +14,9 @@ CATEGORIES = [
         ("01Introduction.html", "Introduction"),
         ("02UsefulLinks.html", "Useful Links"),
         ("03GeneralThings.html", "General Things regarding the MTL"),
-        ("04MoveOrderandPickingPhase.html", "Move Order & Picking Phase"),
+        ("04MoveOrder.html", "Move Order"),
+        ("04PickingPhase.html", "Picking Phase"),
+        ("04TurnPhases.html", "Turn Phases"),
         ("05GeneralGameplay.html", "General Gameplay"),
         ("06Rounding.html", "Rounding"),
         ("07CardSettings.html", "Card Settings"),
@@ -112,6 +114,9 @@ CATEGORIES = [
     ]),
 ]
 
+# Old URLs kept only as redirects to their new pages (not listed in the TOC)
+REDIRECTS = {"04MoveOrderandPickingPhase.html"}
+
 e = lambda s: html.escape(s, quote=False)
 attr = lambda s: html.escape(s, quote=True)
 
@@ -155,14 +160,14 @@ def main():
     os.chdir(ROOT)
     listed = [h for _, ps in CATEGORIES for h, _ in ps]
     missing = [h for h in listed if not os.path.exists(h)]
-    unlisted = sorted(set(glob.glob('*.html')) - set(listed) - {'index.html'})
+    unlisted = sorted(set(glob.glob('*.html')) - set(listed) - {'index.html'} - REDIRECTS)
     if missing: raise SystemExit(f'Listed but missing: {missing}')
     if unlisted: print('Note - pages not in the table of contents:', unlisted)
 
     rw('index.html', lambda s: re.sub(
         r'[ \t]*<h2>Table of Contents</h2>.*?(?=\s*</main>)', lambda _: toc_html().rstrip('\n'), s, flags=re.S))
     sel = select_html()
-    for p in glob.glob('*.html'):
+    for p in set(glob.glob('*.html')) - REDIRECTS:
         rw(p, lambda s: re.sub(r'<select\b.*?</select>', lambda _: sel, s, count=1, flags=re.S))
     print(f'Updated index and dropdowns: {len(CATEGORIES)} categories, {len(listed)} pages.')
 
