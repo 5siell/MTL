@@ -333,3 +333,18 @@ main ol > li > ol:first-child {
     margin: 0;
     padding-left: 1.4em;
 }
+
+/* ---------- Inline colours carried over from the original light-theme document ----------
+   Remapped for the dark theme so highlighted rows and labels stay readable. */
+main [style*="#e6f2ff"] {
+    background-color: #24405c !important;   /* highlighted rows: dark blue tint */
+    color: #e6edf3 !important;
+}
+main [style*="#dcdcdc"] {
+    background-color: #30363d !important;   /* table header rows */
+    color: #ffb100 !important;
+}
+main [style*="color: blue"] { color: #79c0ff !important; }
+main [style*="color: red"]  { color: #ff7b72 !important; }
+main [style*="solid black"] { border-top-color: #8b949e !important; }
+main [style*="color: #555"] { color: #8b949e !important; }  /* figure captions */
