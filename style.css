@@ -296,3 +296,32 @@ main, .site-nav {
     color: #6e7681;
     font-style: italic;
 }
+
+/* ---------- Table of contents (home page) ---------- */
+.toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+.toc-group {
+    background: #1b2125;
+    border: 1px solid #2a3036;
+    border-radius: 6px;
+    padding: 14px 18px 10px;
+}
+.toc-group h3 {
+    margin: 0 0 8px;
+    padding-bottom: 6px;
+    font-size: 1em;
+    color: #ffb100;
+    border-bottom: 1px solid #30363d;
+    letter-spacing: 0.2px;
+}
+.toc-group ul {
+    margin: 0;
+    padding-left: 18px;
+}
+.toc-group li {
+    margin: 4px 0;
+}
