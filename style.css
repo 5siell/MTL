@@ -325,3 +325,11 @@ main, .site-nav {
 .toc-group li {
     margin: 4px 0;
 }
+
+/* Grouped list items (e.g. Turn Phases): start the sub-list on the same line as its number */
+main ol > li > ol:first-child {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding-left: 1.4em;
+}
